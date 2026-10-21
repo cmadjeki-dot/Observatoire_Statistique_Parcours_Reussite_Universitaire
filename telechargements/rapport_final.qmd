@@ -236,7 +236,7 @@ source("scripts/run_tests.R")
 # Application R : source("scripts/run_shiny.R")
 ```
 
-Les sources Quarto produisent les chiffres depuis les sorties R, sans remplacement manuel par les valeurs de la maquette initiale. Le site est un instantané : une nouvelle production doit être rendue, contrôlée puis republiée. La CI est préparée localement mais n'a pas été exécutée sur GitHub pendant la réalisation.
+Les sources Quarto produisent les chiffres depuis les sorties R, sans remplacement manuel par les valeurs de la maquette initiale. Le site est un instantané : une nouvelle production doit être rendue, contrôlée puis republiée. Le statut des contrôles distants est consultable dans [GitHub Actions](https://github.com/cmadjeki-dot/Observatoire_Statistique_Parcours_Reussite_Universitaire/actions) ; la preuve de publication est conservée avec la documentation du dépôt.
 
 Les accès principaux sont réunis sur le [site de présentation](index.html#livrables) :
 
