@@ -1,6 +1,8 @@
 # Site de présentation du projet
 
-**[Ouvrir la page d’accueil](../_site/index.html)**
+**[Ouvrir le site public](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/)**
+
+Après construction locale : [page d’accueil locale](../_site/index.html).
 
 - [Présentation du projet](../_site/projet.html)
 - [Tableaux de bord](../_site/tableaux_de_bord.html)
@@ -45,7 +47,5 @@ prérequis et les commandes de préparation des livrables.
 
 ## Adresse publique
 
-Le site est prêt pour un hébergement classique ou GitHub Pages. Il n’a pas
-encore d’adresse publique sur ces services : aucun dépôt Git distant n’est
-configuré dans ce projet. Une adresse publique indépendante nécessite de
-publier le site sur l’hébergement choisi.
+Le site est publié sur GitHub Pages, depuis la branche `gh-pages` du même
+dépôt que les sources (`main`). Voir [la preuve et le suivi](11_publication.md).

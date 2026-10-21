@@ -1,10 +1,10 @@
 # Vérification des 37 étapes
 
-Revue du 2026-10-21 13:50 UTC. Les références équivalentes sont acceptées sans renommer les fonctions ou multiplier les dossiers. Une présence actuelle et une recette ne prouvent pas une chronologie historique exacte en 37 opérations.
+Revue du 2026-10-21 13:58 UTC. Les références équivalentes sont acceptées sans renommer les fonctions ou multiplier les dossiers. Une présence actuelle et une recette ne prouvent pas une chronologie historique exacte en 37 opérations.
 
 **Statuts :** VALIDE = présence et vérification adaptées au besoin ; ADAPTE = fonction équivalente avec organisation conservée ; PARTIEL = preuve ou exigence restante ; NON_REALISE = opération non effectuée.
 
-VALIDE : 21, ADAPTE : 13, PARTIEL : 2, NON_REALISE : 1.
+VALIDE : 23, ADAPTE : 13, PARTIEL : 1.
 
 | Nº | Étape | Statut | Référence | Constat |
 |---|---|---|---|---|
@@ -17,7 +17,7 @@ VALIDE : 21, ADAPTE : 13, PARTIEL : 2, NON_REALISE : 1.
 | 07 | Chemins | ADAPTE | [R/functions/common.R](../R/functions/common.R) | project_path() et .here remplacent une seconde implementation here/fs. Aucun chemin Windows absolu dans R/. |
 | 08 | Exclusions Git | VALIDE | [.gitignore](../.gitignore) | Donnees, sorties, caches, secrets et copies generees ignores ; exports publics selectionnes explicitement. |
 | 09 | README initial | VALIDE | [README.md](../README.md) | Contexte, installation, architecture, reproduction, tableaux de bord et limites documentes. |
-| 10 | Git local et premier commit | PARTIEL | [.gitignore](../.gitignore) | Depot initialise, branche master ; aucun commit ni remote. Aucun commit automatique sur les fichiers non suivis. |
+| 10 | Git local et premier commit | VALIDE | [.gitignore](../.gitignore) | Sources publiees sur main ; preuve et destination dans docs/26_publication_github.json. |
 | 11 | Cadrage methodologique | VALIDE | [notebooks/00_cadrage_du_projet.qmd](../notebooks/00_cadrage_du_projet.qmd) | Fiche, protocole, populations, temporalite, indicateurs, limites et recette presents. |
 | 12 | Simulation | ADAPTE | [R/01_generate_data.R](../R/01_generate_data.R) | generate_data() et inject_anomalies() remplissent les roles demandes ; 15000 personnes, huit tables, trois annees. |
 | 13 | Tests des donnees | VALIDE | [tests/testthat/test-data.R](../tests/testthat/test-data.R) | 104 assertions dans la suite ; nouvelles verifications de dimensions, cles, relations et graine. Entree existante scripts/run_tests.R conservee. |
@@ -39,7 +39,7 @@ VALIDE : 21, ADAPTE : 13, PARTIEL : 2, NON_REALISE : 1.
 | 29 | Shiny | ADAPTE | [dashboards/shiny/app.R](../dashboards/shiny/app.R) | Application existante conservee : trois vues regroupent les indicateurs. Demarrage HTTP et 30 assertions Shiny verifies ; pas de bslib ajoute ni six nouvelles pages dupliquees. |
 | 30 | Rapport Quarto | VALIDE | [reports/rapport_final.qmd](../reports/rapport_final.qmd) | Nouveaux rendus HTML et PDF verifies ; 13 chapitres conserves. Acces au cache CSS autorise, theme et navigation conserves. |
 | 31 | README final | VALIDE | [README.md](../README.md) | Liens vers l audit, preuves, reproduction et limites actualises. |
-| 32 | Publication GitHub | NON_REALISE | [docs/11_publication.md](11_publication.md) | Preparation locale uniquement ; aucune destination distante confirmee, aucun push. Ne pas confondre ce statut avec une erreur de calcul. |
+| 32 | Publication GitHub | VALIDE | [docs/11_publication.md](11_publication.md) | Sources publiees sur main ; preuve et destination dans docs/26_publication_github.json. |
 | 33 | Presentation orale | VALIDE | [notebooks/13_presentation_orale.qmd](../notebooks/13_presentation_orale.qmd) | Afficher, dire, message cle, question et reponse renseignes ; support Markdown execute. Diaporama existant conserve. |
 | 34 | Discours 3 a 5 minutes | VALIDE | [docs/24_preparation_orale.md](24_preparation_orale.md) | Discours redige a partir des chiffres verifies ; duree visee, non mesuree en situation orale. |
 | 35 | Trente questions de jury | VALIDE | [docs/24_preparation_orale.md](24_preparation_orale.md) | 30 questions, reponses courtes, developpements et pieges ; pas de passage reel devant un jury revendique. |

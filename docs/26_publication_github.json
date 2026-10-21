@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-21",
+  "depot": "https://github.com/cmadjeki-dot/Observatoire_Statistique_Parcours_Reussite_Universitaire",
+  "branche_sources": "main",
+  "sources_publiees": true,
+  "premier_commit_verifie": "c578e854065a966f03f85acef087166a13bebc15",
+  "ci_initiale": "https://github.com/cmadjeki-dot/Observatoire_Statistique_Parcours_Reussite_Universitaire/actions/runs/39612206057",
+  "ci_statut": "premier_echec_corrige_relance_a_verifier",
+  "correctif": "Creation de data/interim dans persist_pipeline sur clonage neuf",
+  "site_statut": "publie_http_200",
+  "site": "https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/",
+  "branche_site": "gh-pages",
+  "premier_deploiement_pages": "https://github.com/cmadjeki-dot/Observatoire_Statistique_Parcours_Reussite_Universitaire/actions/runs/39612772930",
+  "pages_publiques_verifiees": 8
+}

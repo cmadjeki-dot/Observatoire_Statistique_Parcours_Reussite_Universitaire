@@ -31,6 +31,8 @@ reports/tables/**
 !**/.gitkeep
 
 **/*.quarto_ipynb
+**/*.rmarkdown
+**/*.knit.md
 
 # Copies de rapports générées pour les adresses du site (sources : reports/).
 /rapport_final.qmd

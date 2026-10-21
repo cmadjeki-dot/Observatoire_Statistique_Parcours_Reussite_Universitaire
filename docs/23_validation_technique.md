@@ -1,6 +1,6 @@
 # Validation technique finale
 
-Exécution du 2026-10-21 13:50 UTC. Statut global : **validation technique locale réussie sur le périmètre contrôlé**.
+Exécution du 2026-10-21 13:58 UTC. Statut global : **validation technique locale réussie sur le périmètre contrôlé**.
 
 | Contrôle | Statut réel | Preuve |
 |---|---|---|
@@ -19,8 +19,8 @@ Exécution du 2026-10-21 13:50 UTC. Statut global : **validation technique local
 | Schémas PBIR Python | VALIDE : 79 fichiers, 0 erreur, dépendances Python figées | `outputs/validation_finale/schemas_powerbi.log` |
 | Exports protégés | VALIDE : six fichiers strictement identiques avant/après correction (SHA-256) | `outputs/validation_finale/corrections_validees.json` |
 | Moteur DAX et canvas Desktop | Recette historique conservée ; pas de nouvelle recette moteur ni de contrôle visuel exhaustif | `docs/16_recette_powerbi.md` |
-| Git | Dépôt local sur master, fichiers non suivis, aucun commit ni remote ; aucun push | `outputs/validation_finale/git.txt` |
-| CI GitHub et LimeSurvey | NON EXECUTES dans leurs services respectifs | `docs/11_publication.md`, `surveys/protocols/protocole.md` |
+| Git | VALIDE : sources sur main dans le dépôt confirmé ; preuve dans docs/26_publication_github.json | `outputs/validation_finale/git.txt` |
+| CI GitHub et LimeSurvey | Statut CI dans docs/11_publication.md ; import LimeSurvey non exécuté | `docs/11_publication.md`, `surveys/protocols/protocole.md` |
 
 ## Corrections réalisées pendant la revue
 
@@ -46,8 +46,7 @@ Le rendu requiert un cache CSS accessible. Après une nouvelle autorisation,
 les rendus normaux réussissent ; le thème n’a pas été remplacé pour contourner
 le problème. Les anciens échecs restent des preuves historiques, pas le statut
 actuel. Le validateur Power BI s’installe avec `scripts/setup_powerbi_validation.ps1`.
-La CI comprend désormais des contrôles lintr et Power BI, sans exécution distante
-revendiquée dans cette session.
+La CI comprend désormais des contrôles lintr et Power BI, avec statut distant documenté dans docs/11_publication.md.
 
 Les journaux PowerShell peuvent étiqueter la sortie stderr de R comme
 `NativeCommandError` lors des warnings de locale. Le résultat du contrôle

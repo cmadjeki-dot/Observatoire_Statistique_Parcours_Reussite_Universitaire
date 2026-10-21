@@ -27,9 +27,11 @@ voir [les corrections et leurs preuves](25_corrections_validation.md).
 La recette historique du moteur DAX est conservée ; elle n’a pas été renouvelée
 pendant cet audit. Aucune inspection exhaustive du canvas Desktop n’est revendiquée.
 
-Git est local, sans commit ni dépôt distant. Aucune publication GitHub ou Power BI
-Service n’est effectuée. Les questionnaires sont des matrices non importées
-dans LimeSurvey. La CI GitHub n’a pas été exécutée dans le service.
+Les sources sont publiées sur la branche `main` du dépôt GitHub confirmé.
+Le statut de GitHub Pages et de la CI distante est documenté dans
+[le suivi de publication](11_publication.md). Aucune publication Power BI
+Service n’est effectuée. Les questionnaires restent des matrices non importées
+dans LimeSurvey.
 
 ## Conclusion de recette
 

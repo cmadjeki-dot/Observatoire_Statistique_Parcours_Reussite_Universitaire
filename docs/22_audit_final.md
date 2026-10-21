@@ -1,6 +1,6 @@
 # Audit final — 89/100
 
-Autoévaluation technique et documentaire du 2026-10-21 13:50 UTC, selon le barème demandé. Cette note motive un jugement ; elle ne constitue pas une certification ni une mesure statistique de qualité.
+Autoévaluation technique et documentaire du 2026-10-21 13:58 UTC, selon le barème demandé. Cette note motive un jugement ; elle ne constitue pas une certification ni une mesure statistique de qualité.
 
 | Domaine | Note | Justification |
 |---|---|---|
@@ -20,7 +20,7 @@ Autoévaluation technique et documentaire du 2026-10-21 13:50 UTC, selon le bar�
 
 ## Verdict
 
-**Validation technique locale réussie sur le périmètre contrôlé.** Les trois réserves techniques de l’audit initial sont levées : lintr sans observation, 79 schémas Power BI valides et nouveaux rendus Quarto réussis. Les exports protégés sont strictement identiques à ceux d’avant correction. La publication GitHub n’est pas réalisée et n’est pas un préalable au fonctionnement local.
+**Validation technique locale réussie sur le périmètre contrôlé.** Les trois réserves techniques de l’audit initial sont levées : lintr sans observation, 79 schémas Power BI valides et nouveaux rendus Quarto réussis. Les exports protégés sont strictement identiques à ceux d’avant correction. Les sources sont publiées sur GitHub ; voir la preuve de publication et les limites de validation distante dans docs/11_publication.md.
 
 ## Réserves levées
 
@@ -28,7 +28,7 @@ Autoévaluation technique et documentaire du 2026-10-21 13:50 UTC, selon le bar�
 2. Validateur Power BI isolé dans `.venv-powerbi/`, versions figées dans `requirements-powerbi.txt` ; ancien dossier Python incomplet exclu du chargement.
 3. Accès au cache CSS Quarto autorisé : rendus normaux réussis sans changer le thème ni la navigation.
 
-Pour une diffusion publique, choisir destination et licence, sélectionner les sources, créer les commits et publier uniquement dans le périmètre confirmé.
+La diffusion porte sur les sources auditées et les agrégats protégés. Aucune licence de réutilisation supplémentaire n’a été choisie automatiquement.
 
 ## Améliorations non bloquantes
 

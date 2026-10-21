@@ -46,8 +46,9 @@ Shiny nécessite R et Power BI nécessite Desktop.
 ## Hébergement
 
 Le contenu de `_site/` peut être envoyé sur un hébergement statique ou GitHub
-Pages. Les liens sont relatifs. Aucun déploiement GitHub n'est réalisé par
-ces commandes et aucun dépôt distant n'est actuellement configuré.
+Pages. Les liens sont relatifs. Les commandes de construction ne déclenchent
+pas de déploiement. La destination et les preuves de publication sont
+documentées dans [le suivi GitHub](11_publication.md).
 
 Le rapport final est disponible à `rapport_final.html` avec ses treize
 chapitres numérotés et sa table des matières.

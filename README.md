@@ -54,6 +54,8 @@ Les définitions détaillées restent centralisées dans le [dictionnaire des do
 
 ## Site de présentation Quarto
 
+[**Consulter le site en ligne**](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/)
+
 Le site classique est intégré au dépôt : accueil, projet, tableaux de bord,
 rapport final en treize chapitres et téléchargements.
 
@@ -78,7 +80,7 @@ Le pipeline R est autonome et n'utilise ni Python ni Power BI pour calculer les 
 
 ## État au 21 octobre 2026
 
-La [vérification des 37 étapes](docs/21_verification_37_etapes.md) distingue présence, équivalence et preuve d’exécution : 34 étapes validées ou adaptées, deux partielles, une publication GitHub non réalisée. La validation actuelle ne certifie pas une chronologie historique exacte en 37 opérations.
+La [vérification des 37 étapes](docs/21_verification_37_etapes.md) distingue présence, équivalence et preuve d’exécution : 36 étapes validées ou adaptées, une partielle concernant la vérification graphique dans VS Code. Les sources sont publiées sur la branche `main` du [dépôt GitHub](https://github.com/cmadjeki-dot/Observatoire_Statistique_Parcours_Reussite_Universitaire). La validation actuelle ne certifie pas une chronologie historique exacte en 37 opérations.
 
 **Audit final : [89/100](docs/22_audit_final.md), validation technique locale réussie.** Le pipeline a été recalculé ; **104 assertions R passent**, dont 30 pour Shiny, sans échec, avertissement de test ou test ignoré. L’audit lintr ne signale aucune observation sur `R/`. Les 79 schémas Power BI sont validés avec des dépendances Python figées. Les rapports, les 18 notebooks et le site Quarto sont rendus ; les PDF sont régénérés. `renv::status()` est cohérent, et les six exports protégés sont strictement identiques avant/après correction. Voir [la validation technique détaillée](docs/23_validation_technique.md) et [les corrections](docs/25_corrections_validation.md).
 
@@ -93,29 +95,29 @@ Les recettes des huit jalons initiaux sont conservées dans [docs/recettes](docs
 | 5 | questionnaires, non-réponse, satisfaction et insertion à six mois analysés |
 | 6 | modèle logistique, diagnostics, évaluation séparée et sensibilité produits |
 | 7 | pipeline et exports protégés validés ; projet Power BI PBIP de trois pages généré et ouvert ; 126 comparaisons R/DAX réussies dans Desktop |
-| 8 | rapport, note, présentation et enquête rendus ; publication GitHub non effectuée |
+| 8 | rapport, note, présentation et enquête rendus ; sources publiées sur GitHub |
 
 Résultats **fictifs** 2025-2026 : 10 222 inscrits préparés, 7 478 validations connues sur tous les inscrits (73,2 %), 288 résultats inconnus. Le modèle initial a une AUC d'environ 0,607 : discrimination limitée, aucune utilisation individuelle ou inférence causale. Les paramètres de simulation expliquent ces résultats, sans portée empirique sur l'UPEC.
 
 ## Livrables à ouvrir
 
-- **[Ouvrir la page du site](_site/index.html)** : présentation du projet, tableaux de bord, rapports Quarto et téléchargements.
-- **[Rapport final à treize chapitres](_site/rapport_final.html)**. Accès et vérifications documentés dans [le guide du site](docs/17_site_presentation.md).
+- **[Ouvrir la page du site](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/)** : présentation du projet, tableaux de bord, rapports Quarto et téléchargements.
+- **[Rapport final à treize chapitres](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/rapport_final.html)**. Accès et vérifications documentés dans [le guide du site](docs/17_site_presentation.md).
 
 - **[Tableau de bord Power BI natif](dashboards/powerbi/Observatoire/Observatoire.pbip)** : trois pages déjà construites ; [guide d'ouverture](dashboards/powerbi/README.md). Modèle et schémas vérifiés, 126 comparaisons R/DAX réussies dans Desktop. Livrable PBIP, aucune publication dans le service Power BI.
 
 - **[Application R Shiny](dashboards/shiny/README.md)** : lancer `source("scripts/run_shiny.R")` depuis la racine, puis ouvrir `http://127.0.0.1:3839`.
 
 - [Tableau de bord interactif local](dashboards/interactive/dist/index.html) : filtres année/formation, cartes, graphiques et huit fiches méthodologiques. Actualiser ses données protégées avec `python scripts/build_dashboard_data.py` après exécution du pipeline R.
-- [Tableau de bord intégré au site](_site/tableaux_de_bord.html) et [version pleine page](_site/dashboard/index.html).
+- [Tableau de bord intégré au site](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/tableaux_de_bord.html) et [version pleine page](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/dashboard/index.html).
 - [Fiche pour maîtriser les indicateurs](docs/13_maitriser_les_indicateurs.md) : formules, exemples chiffrés et points de vigilance.
 
-- [Rapport final HTML](outputs/reports/reports/rapport_final.html) et [PDF](outputs/reports/reports/rapport_final.pdf).
-- [Note de pilotage HTML](outputs/reports/reports/note_pilotage.html) et [PDF](outputs/reports/reports/note_pilotage.pdf).
-- [Présentation de dix minutes](outputs/reports/reports/presentation.html).
-- [Rapport d'enquêtes](outputs/reports/reports/enquetes.html).
+- [Rapport final HTML](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/rapport_final.html) et [PDF](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/rapport_final.pdf).
+- [Note de pilotage HTML](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/note_pilotage.html) et [PDF](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/note_pilotage.pdf).
+- [Présentation de dix minutes](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/presentation.html).
+- [Rapport d'enquêtes](https://cmadjeki-dot.github.io/Observatoire_Statistique_Parcours_Reussite_Universitaire/enquetes.html).
 - [Guide Power BI, requêtes et mesures](dashboards/powerbi/README.md).
-- [Méthodologie du modèle](docs/09_methodologie_modeles.md), [préparation de l'entretien](docs/10_entretien.md) et [publication locale](docs/11_publication.md).
+- [Méthodologie du modèle](docs/09_methodologie_modeles.md), [préparation de l'entretien](docs/10_entretien.md) et [publication GitHub](docs/11_publication.md).
 
 Git local initialisé ; R 4.6.1 et Quarto 1.10.18 utilisés. Power BI Desktop a ouvert le projet et exécuté l'actualisation ainsi que la recette DAX ; l'inspection exhaustive du canvas n'est pas revendiquée. Les matrices LimeSurvey sont des supports de transposition non importés. Le livrable Power BI est un PBIP, sans publication dans le service ni rafraîchissement distant. Les quatre rapports Quarto ont été actualisés lors de la publication du site ; le rapport final suit désormais le plan demandé en treize chapitres.
 
@@ -125,4 +127,4 @@ Vérification : `source("scripts/02_verify_setup.R")`. R émet actuellement des 
 
 `R/` : fonctions de traitement ; `scripts/` : commandes d'exécution ; `config/` : paramètres et définitions ; `data/` : sources, copies dégradées et données préparées ; `tests/testthat/` : contrôles statistiques ; `notebooks/` : exploration ; `surveys/` : questionnaire et protocole ; `dashboards/powerbi/` : modèle et mesures ; `reports/` : sources Quarto ; `outputs/` : livrables calculés ; `docs/` : méthode et recette ; `prompts/` : consignes réutilisables.
 
-Les données générées et les sorties sont ignorées par Git par défaut. Une publication éventuelle fera l'objet d'une sélection explicite. Aucun dépôt distant n'est encore créé. L’[architecture documentée](docs/19_architecture_vscode.md) distingue sources, données régénérables et livrables. La [revue de cohérence](docs/20_revue_cadrage_architecture.md) indique les compléments apportés et les doublons évités.
+Les données générées et les sorties sont ignorées par Git par défaut. Les sources sélectionnées sont publiées sur `main`, et le site rendu sur `gh-pages`, avec des agrégats protégés. L’[architecture documentée](docs/19_architecture_vscode.md) distingue sources, données régénérables et livrables. La [revue de cohérence](docs/20_revue_cadrage_architecture.md) indique les compléments apportés et les doublons évités.

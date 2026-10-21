@@ -137,6 +137,7 @@ persist_pipeline <- function(
     write_tables(injected$raw, "data/raw"),
     write_tables(prepared$tables, "data/processed")
   )
+  dir.create("data/interim", recursive = TRUE, showWarnings = FALSE)
   saveRDS(prepared, "data/interim/qualite.rds")
   saveRDS(indicators, "data/interim/indicateurs.rds")
   saveRDS(
