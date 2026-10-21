@@ -1,6 +1,6 @@
 # Vérification des 37 étapes
 
-Revue du 2026-10-21 13:58 UTC. Les références équivalentes sont acceptées sans renommer les fonctions ou multiplier les dossiers. Une présence actuelle et une recette ne prouvent pas une chronologie historique exacte en 37 opérations.
+Revue du 2026-10-21 14:15 UTC. Les références équivalentes sont acceptées sans renommer les fonctions ou multiplier les dossiers. Une présence actuelle et une recette ne prouvent pas une chronologie historique exacte en 37 opérations.
 
 **Statuts :** VALIDE = présence et vérification adaptées au besoin ; ADAPTE = fonction équivalente avec organisation conservée ; PARTIEL = preuve ou exigence restante ; NON_REALISE = opération non effectuée.
 

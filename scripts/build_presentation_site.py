@@ -33,7 +33,7 @@ def archive_sources():
             files.append(path)
     for name in ['.here','.Rprofile','.gitignore','.renvignore','DESCRIPTION','Observatoire.Rproj','renv.lock','_targets.R','_quarto.yml','README.md','renv/activate.R','renv/settings.json','.github/workflows/validate.yml','index.qmd','projet.qmd','tableaux_de_bord.qmd','indicateurs.qmd','livrables.qmd','reproduire.qmd','website.css']:
         files.append(ROOT/name)
-    files.append(ROOT/'requirements-powerbi.txt')
+    files.extend(ROOT/name for name in ('requirements-powerbi.txt', '.quartoignore', '.Rbuildignore'))
     files.extend((ROOT/'outputs/exports/powerbi').glob('*.csv'))
     files.extend((ROOT/'assets/previews').glob('*.png'))
     files.extend(DIST/name for name in ('index.html','style.css','site.js'))

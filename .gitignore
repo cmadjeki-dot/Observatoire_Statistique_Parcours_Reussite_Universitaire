@@ -40,6 +40,19 @@ reports/tables/**
 /enquetes.qmd
 /presentation.qmd
 
+# Fichiers temporaires laisses a la racine si un rendu est interrompu.
+/index.html
+/projet.html
+/tableaux_de_bord.html
+/indicateurs.html
+/livrables.html
+/reproduire.html
+/rapport_final.html
+/note_pilotage.html
+/enquetes.html
+/presentation.html
+/site_libs/
+
 /.quarto/
 
 # Gabarits conserves ; autres livrables reconstruits par les scripts.
