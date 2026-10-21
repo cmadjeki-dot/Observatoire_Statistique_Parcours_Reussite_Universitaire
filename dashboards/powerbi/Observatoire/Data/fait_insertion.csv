@@ -1,0 +1,16 @@
+annee,formation_id,diplomes,eligibles,non_matures,sollicites,repondants,situations_connues,emploi,recherche_emploi,etudes,inactif,actifs,non_reponse,situations_inconnues,masque
+2023-2024,F01,,,,,,,,,,,,,,TRUE
+2023-2024,F02,,,,,,,,,,,,,,TRUE
+2023-2024,F03,,,,,,,,,,,,,,TRUE
+2023-2024,F04,,,,,,,,,,,,,,TRUE
+2023-2024,F05,,,,,,,,,,,,,,TRUE
+2024-2025,F01,,,,,,,,,,,,,,TRUE
+2024-2025,F02,,,,,,,,,,,,,,TRUE
+2024-2025,F03,,,,,,,,,,,,,,TRUE
+2024-2025,F04,,,,,,,,,,,,,,TRUE
+2024-2025,F05,,,,,,,,,,,,,,TRUE
+2025-2026,F01,242,0,242,0,0,0,0,0,0,0,0,0,0,FALSE
+2025-2026,F02,261,0,261,0,0,0,0,0,0,0,0,0,0,FALSE
+2025-2026,F03,224,0,224,0,0,0,0,0,0,0,0,0,0,FALSE
+2025-2026,F04,455,0,455,0,0,0,0,0,0,0,0,0,0,FALSE
+2025-2026,F05,406,0,406,0,0,0,0,0,0,0,0,0,0,FALSE

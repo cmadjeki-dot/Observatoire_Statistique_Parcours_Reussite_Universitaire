@@ -1,0 +1,68 @@
+---
+title: "Cadrage initial — Observatoire universitaire"
+subtitle: "Démonstrateur sur données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+execute:
+  eval: false
+---
+
+## Objet du notebook
+
+Ce document formalise le cadrage avant analyse. Il ne recalcule aucun résultat
+et renvoie aux documents de référence plutôt que de recopier leurs définitions.
+
+## Besoin métier
+
+Comprendre l’évolution des inscriptions, la validation, les transitions et les
+avis des étudiants, puis le devenir des diplômés lorsque l’horizon est observable.
+Les destinataires sont les chargés d’études et les responsables de formation
+et du pilotage d’une université fictive.
+
+[Fiche d’identité](../docs/00_fiche_identite.md) ·
+[Commande et questions détaillées](../docs/01_cahier_des_charges.md)
+
+## Population et unités statistiques
+
+La simulation porte sur 15 000 personnes distinctes à la génération, trois
+années universitaires et cinq formations fictives. Distinguer personne,
+inscription annuelle, cohorte d’entrée, population éligible au diplôme et
+population effectivement sollicitée par enquête.
+
+Les entrants avant le début de la fenêtre ne sont pas des primo-entrants
+observables. La cohorte d’une enquête et les inscrits d’une année ne sont pas
+interchangeables. [Protocole statistique](../docs/02_protocole_statistique.md).
+
+## Hypothèses et décisions avant calcul
+
+- Définir la réussite comme la validation annuelle du périmètre simulé ; la
+  diplomation terminale est un indicateur distinct.
+- Conserver les résultats inconnus et publier la couverture des résultats.
+- Exiger une année suivante observable pour les transitions.
+- Ne pas confondre absence de réinscription, sortie documentée et abandon.
+- Retenir les invitations effectivement délivrées pour la participation et les
+  avis exprimés pour la satisfaction.
+- Vérifier la maturité à six mois avant de calculer un indicateur d’insertion.
+- Traiter toute comparaison comme descriptive ; la modélisation exploratoire
+  n’identifie pas un effet causal.
+
+Ces choix sont opérationnalisés dans le [dictionnaire des indicateurs](../docs/04_dictionnaire_indicateurs.md)
+et dans `config/indicator_definitions.yml`. Toute modification de population,
+de période ou de dénominateur doit entraîner une actualisation de la définition
+et une nouvelle recette.
+
+## Qualité, limites et recette
+
+La simulation n’étaye aucune conclusion empirique sur l’UPEC. Les contrôles
+portent sur les clés, les domaines, la temporalité, les anomalies, les manquants,
+les censures et le masquage de petits effectifs.
+
+- [Dictionnaire des données](../docs/03_dictionnaire_donnees.md)
+- [Plan qualité](../docs/05_plan_qualite.md)
+- [Critères de validation par jalon](../docs/06_plan_validation.md)
+- [Architecture et exécution dans VS Code](../docs/19_architecture_vscode.md)
+
+Les résultats et leur interprétation appartiennent aux notebooks d’analyse et
+au rapport final. Ce cadrage n’annonce pas de résultat non calculé.

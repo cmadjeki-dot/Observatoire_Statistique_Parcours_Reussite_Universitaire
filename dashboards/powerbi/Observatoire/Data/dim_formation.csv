@@ -1,0 +1,6 @@
+formation_id,libelle_fictif,composante_fictive,cycle,niveau_terminal
+F01,Licence Alpha,Pole A,Licence,3
+F02,Licence Beta,Pole A,Licence,3
+F03,Licence Gamma,Pole B,Licence,3
+F04,Master Delta,Pole B,Master,2
+F05,Master Epsilon,Pole C,Master,2

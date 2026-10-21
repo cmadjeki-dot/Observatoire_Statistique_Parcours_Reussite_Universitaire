@@ -1,0 +1,22 @@
+---
+title: "Comprendre les indicateurs"
+---
+
+| Indicateur | Calcul simplifié | Précaution |
+|---|---|---|
+| Effectifs inscrits | Étudiants distincts dans le périmètre | Année, formation, inscriptions multiples |
+| Évolution des inscriptions | $(N_t-N_{t-1})/N_{t-1} \times 100$ | Périmètre stable et dénominateur non nul |
+| Réussite | Validations / population éligible | Définition de la validation et résultats inconnus |
+| Passage | Passages en année supérieure / cohorte | Date d’observation et suivi |
+| Réorientation | Réorientés / cohorte suivie | Réorientation interne ou externe observable |
+| Participation | Répondants / personnes effectivement sollicitées | Invitations délivrées et non-réponse |
+| Satisfaction | Satisfaits / répondants ayant exprimé un avis | Sans-avis et seuil de satisfaction |
+| Emploi | Diplômés en emploi / population méthodologique retenue | Horizon, poursuites d’études et inconnus |
+
+## Comparer les résultats
+
+Une comparaison suppose des périodes, des exclusions et des populations compatibles. Chaque pourcentage doit être accompagné de son dénominateur. Un résultat masqué ou non observable ne vaut pas zéro.
+
+La validation de 2025-2026 est de **73,2 % des inscrits éligibles**, tandis que la satisfaction de **71,4 %** porte sur les **avis exprimés**.
+
+[Méthodes détaillées](rapport_final.qmd#méthodes-et-définitions) · [Fiche pour l’entretien](telechargements/fiche_indicateurs.md)

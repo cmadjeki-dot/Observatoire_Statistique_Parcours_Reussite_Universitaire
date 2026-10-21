@@ -1,0 +1,65 @@
+---
+title: "Note de pilotage"
+format:
+  html:
+    theme: none
+    toc: false
+    css: note.css
+    embed-resources: true
+---
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding="UTF-8")
+i <- readRDS("data/interim/indicateurs.rds")$counts$annuel
+q <- readRDS("data/interim/enquetes.rds")
+x <- tail(i, 1)
+e <- q$evaluation$counts[q$evaluation$counts$annee == x$annee, ]
+f <- function(n,d) sprintf("%.1f %%",100*ratio(n,d))
+```
+
+::: {.note-page}
+# Observatoire des parcours universitaires
+
+**Note de pilotage — démonstration — 21 octobre 2026**  
+**Données entièrement fictives. Aucun résultat réel de l'UPEC.**
+
+## Objet et périmètre
+
+Illustrer une chaîne statistique reproductible pour éclairer inscriptions, validation, transitions et enquêtes. Trois années (2023-2024 à 2025-2026), cinq formations fictives, 15 000 personnes générées, une inscription principale par année. Clôture au 30 septembre 2026.
+
+## Trois constats issus du jeu préparé
+
+1. **`r x$inscrits` inscrits en 2025-2026**, contre `r i$inscrits[2]` l'année précédente. Cette évolution est construite par le simulateur et ne mesure aucune attractivité réelle.
+2. **`r f(x$validations,x$inscrits)` de validation sur les éligibles**, avec `r x$inconnus` résultats inconnus. Le taux parmi les résultats connus vaut `r f(x$validations,x$connus)` ; le diplôme terminal constitue un indicateur distinct.
+3. **`r f(sum(e$satisfaits),sum(e$avis))` de satisfaction parmi les avis exprimés**, pour une participation de `r f(sum(e$repondants),sum(e$sollicites))`. Ce résultat décrit les répondants et ne peut être étendu automatiquement aux non-répondants.
+
+## Fiabilité
+
+Doublons exacts supprimés ; conflits et dépendances en quarantaine ; aucun résultat imputé arbitrairement. Les tests vérifient clés, domaines, temporalité, dénominateurs et rapprochements. Les comptes et la couverture accompagnent les taux. Les différences observées proviennent des probabilités artificielles et des compositions simulées.
+
+*1 / 2 — Démonstrateur sans affiliation officielle à l'UPEC.*
+:::
+
+::: {.note-page}
+## Trois points à discuter avec un commanditaire
+
+**Sécuriser le suivi.** Ne pas assimiler l'absence de réinscription à un abandon. Séparer situations inconnues, sorties explicitement documentées et fins de cycle diplômées. Le devenir en 2026-2027 n'est pas observable : aucun taux de transition 2025-2026 n'est fourni.
+
+**Qualifier les enquêtes.** Examiner les écarts de participation selon les profils avant d'interpréter la satisfaction. À six mois, les diplômés de juillet 2026 ne sont pas encore éligibles à la clôture. Distinguer emploi parmi situations connues et insertion parmi actifs ; ne pas comparer des dénominateurs différents.
+
+**Organiser la production.** Conserver un dictionnaire versionné, un journal qualité et une recette des filtres. Les actualisations sont reproductibles avec R, renv et targets. Une règle de diffusion conservatrice protège les petits comptes et leurs compléments avant export.
+
+## Ce que le démonstrateur permet de montrer
+
+Prendre en charge une commande, définir des populations, fiabiliser des tables relationnelles, construire des indicateurs, analyser la non-réponse et restituer les limites à un responsable. Le modèle logistique est exploratoire ; il ne constitue pas un outil de décision individuelle et n'établit aucun effet causal.
+
+## Travaux restant à valider
+
+Les tableaux de bord web et R Shiny sont réalisés. Le **projet Power BI natif PBIP de trois pages** est construit ; 126 rapprochements R/DAX sont validés dans son moteur. L'inspection exhaustive du canvas reste distincte de ces contrôles. L'import LimeSurvey n'est pas testé. Aucun déploiement dans le service Power BI ni hébergement Shiny distant n'est effectué.
+
+Ces livrables peuvent illustrer une contribution à l'autoévaluation d'une formation, sans certification de conformité HCERES. Toute application réelle demanderait un cadrage institutionnel et des règles de confidentialité adaptés.
+
+*2 / 2 — Sources : sorties R du démonstrateur, méthode dans docs/.*
+:::

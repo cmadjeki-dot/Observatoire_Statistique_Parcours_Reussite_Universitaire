@@ -1,0 +1,25 @@
+---
+title: "Parcours et suivi longitudinal — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Une transition exige une année suivante observable. Les cohortes d’entrée observées ne représentent pas tous les primo-entrants historiques. Une absence de réinscription ne prouve pas un abandon.
+
+```{r}
+i <- readRDS("data/interim/indicateurs.rds")
+knitr::kable(i$counts$cohorte)
+knitr::kable(i$counts$annuel)
+```
+
+Les passages, redoublements, réorientations, sorties documentées, fins diplômées et situations inconnues doivent rester séparés. La dernière année est censurée pour le devenir ultérieur.

@@ -1,0 +1,26 @@
+---
+title: "Importation et description initiale — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Les tables brutes sont conservées sans nettoyage. Les résumés ci-dessous décrivent leurs types, modalités et manquants. `summary()` complète `glimpse()` sans ajouter une dépendance `skimr` pour cette seule restitution.
+
+```{r}
+raw <- readRDS("data/raw/tables.rds")
+dplyr::glimpse(raw$etudiants)
+summary(raw$etudiants)
+knitr::kable(as.data.frame(table(raw$resultats$validation, useNA = "ifany")))
+```
+
+Ces distributions contiennent les anomalies contrôlées. Elles ne décrivent pas encore le périmètre analytique et ne permettent aucune conclusion causale.

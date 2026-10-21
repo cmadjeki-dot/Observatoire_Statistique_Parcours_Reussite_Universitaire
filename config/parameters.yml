@@ -1,0 +1,17 @@
+project:
+  label: "Démonstrateur — données entièrement fictives"
+  seed: 20261021
+  n_students: 15000
+  academic_years: ["2023-2024", "2024-2025", "2025-2026"]
+  observation_end: "2026-09-30"
+  primary_enrolment_only: true
+  disclosure_threshold: 5
+  outcome_horizon_months: 6
+  outcome_survey_cutoff: "2026-09-30"
+  simulation:
+    formation_success_offsets: [-0.35, 0.15, -0.05, 0.40, 0.25]
+    formation_response_offsets: [-0.15, 0.15, -0.05, 0.20, 0.10]
+    result_missing_probability: 0.025
+    profile_missing_probability: 0.04
+    delivery_probability: 0.96
+    exit_documented_probability: 0.40

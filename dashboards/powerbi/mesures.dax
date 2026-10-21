@@ -1,0 +1,37 @@
+// Creer chaque mesure separement. BLANK protege aussi les agregats partiellement masques.
+Scolarite masquee = COUNTROWS(FILTER(FactScolarite, FactScolarite[masque] = TRUE())) > 0
+Evaluation masquee = COUNTROWS(FILTER(FactEvaluation, FactEvaluation[masque] = TRUE())) > 0
+Insertion masquee = COUNTROWS(FILTER(FactInsertion, FactInsertion[masque] = TRUE())) > 0
+
+Inscrits = IF(HASONEVALUE(DimAnnee[annee]) && NOT([Scolarite masquee]), SUM(FactScolarite[inscrits]), BLANK())
+Inscriptions annuelles cumulees = IF(NOT([Scolarite masquee]), SUM(FactScolarite[inscrits]), BLANK())
+Validation eligibles = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[validations]), SUM(FactScolarite[inscrits])), BLANK())
+Couverture resultats = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[connus]), SUM(FactScolarite[inscrits])), BLANK())
+Validation connus = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[validations]), SUM(FactScolarite[connus])), BLANK())
+Validation borne haute = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[validations]) + SUM(FactScolarite[inconnus]), SUM(FactScolarite[inscrits])), BLANK())
+Diplomation = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[diplomes]), SUM(FactScolarite[eligibles_diplome])), BLANK())
+Passage = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[passages]), SUM(FactScolarite[eligibles_passage])), BLANK())
+Redoublement = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[redoublements]), SUM(FactScolarite[suivis])), BLANK())
+Reorientation = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[reorientations]), SUM(FactScolarite[suivis])), BLANK())
+Sortie observee = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[sorties_observees]), SUM(FactScolarite[suivis])), BLANK())
+Situation inconnue = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[situations_inconnues]), SUM(FactScolarite[suivis])), BLANK())
+Fin de formation diplomee = IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[fins_diplomees]), SUM(FactScolarite[suivis])), BLANK())
+
+Evolution =
+VAR UnAn = HASONEVALUE(DimAnnee[annee])
+VAR Ordre = SELECTEDVALUE(DimAnnee[ordre])
+VAR Actuel = [Inscrits]
+VAR Precedent = CALCULATE([Inscrits], FILTER(ALL(DimAnnee), DimAnnee[ordre] = Ordre - 1))
+RETURN IF(UnAn && NOT(ISBLANK(Actuel)) && NOT(ISBLANK(Precedent)), DIVIDE(Actuel - Precedent, Precedent), BLANK())
+
+Participation evaluation = IF(NOT([Evaluation masquee]), DIVIDE(SUM(FactEvaluation[repondants]), SUM(FactEvaluation[sollicites])), BLANK())
+Satisfaction = IF(NOT([Evaluation masquee]), DIVIDE(SUM(FactEvaluation[satisfaits]), SUM(FactEvaluation[avis])), BLANK())
+Couverture avis = IF(NOT([Evaluation masquee]), DIVIDE(SUM(FactEvaluation[avis]), SUM(FactEvaluation[repondants])), BLANK())
+Avis valides = IF(NOT([Evaluation masquee]), SUM(FactEvaluation[avis]), BLANK())
+
+Eligibles insertion = IF(NOT([Insertion masquee]), SUM(FactInsertion[eligibles]), BLANK())
+Non matures = IF(NOT([Insertion masquee]), SUM(FactInsertion[non_matures]), BLANK())
+Participation insertion = IF(NOT([Insertion masquee]), DIVIDE(SUM(FactInsertion[repondants]), SUM(FactInsertion[sollicites])), BLANK())
+Emploi six mois = IF(NOT([Insertion masquee]), DIVIDE(SUM(FactInsertion[emploi]), SUM(FactInsertion[situations_connues])), BLANK())
+Insertion actifs = IF(NOT([Insertion masquee]), DIVIDE(SUM(FactInsertion[emploi]), SUM(FactInsertion[actifs])), BLANK())
+Situations connues = IF(NOT([Insertion masquee]), SUM(FactInsertion[situations_connues]), BLANK())

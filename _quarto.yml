@@ -1,0 +1,57 @@
+project:
+  type: website
+  output-dir: _site
+  execute-dir: project
+  pre-render: python scripts/prepare_website.py
+  post-render: python scripts/finish_website.py
+  render:
+    - index.qmd
+    - projet.qmd
+    - tableaux_de_bord.qmd
+    - indicateurs.qmd
+    - livrables.qmd
+    - reproduire.qmd
+    - rapport_final.qmd
+    - note_pilotage.qmd
+    - enquetes.qmd
+    - presentation.qmd
+website:
+  title: "Observatoire universitaire"
+  description: "Parcours, réussite et devenir des Étudiants · projet de démonstration."
+  navbar:
+    background: "#183c38"
+    foreground: white
+    left:
+      - href: index.qmd
+        text: Accueil
+      - href: projet.qmd
+        text: Le projet
+      - href: tableaux_de_bord.qmd
+        text: Tableaux de bord
+      - href: rapport_final.qmd
+        text: Rapport final
+      - text: Ressources
+        menu:
+          - href: indicateurs.qmd
+            text: Indicateurs
+          - href: note_pilotage.qmd
+            text: Note de pilotage
+          - href: enquetes.qmd
+            text: Enquêtes
+          - href: livrables.qmd
+            text: Livrables
+          - href: reproduire.qmd
+            text: Reproduire le projet
+  page-footer: "Données entièrement fictives · Sans affiliation officielle à l’UPEC"
+  search: true
+lang: fr
+execute:
+  echo: false
+  warning: false
+  message: false
+format:
+  html:
+    theme: cosmo
+    css: website.css
+    toc: true
+    toc-title: "Sur cette page"

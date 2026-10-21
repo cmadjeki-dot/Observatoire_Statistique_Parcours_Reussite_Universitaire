@@ -1,0 +1,27 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const nodes=new Map();function node(id){if(!nodes.has(id))nodes.set(id,{value:id==='#year'?'2025-2026':id==='#formation'?'all':'',style:{},dataset:{},events:{},classList:{toggle(){}},setAttribute(){},removeAttribute(){},append(){},scrollIntoView(){},addEventListener(n,f){this.events[n]=f;}});return nodes.get(id);}
+const nav=['overview','journeys','methods'].map(x=>({...node(x),id:x,dataset:{view:x}}));
+const segments=['success','enrolment','satisfaction'].map(x=>({...node(x),dataset:{metric:x}}));
+const doc={querySelector:node,querySelectorAll:s=>s==='.view'?nav:s==='.nav'?nav:segments,createElement:()=>({})};
+const context={window:{},document:doc,Intl,console};vm.createContext(context);
+vm.runInContext(fs.readFileSync(path.join(__dirname,'dist/data.js'),'utf8'),context);vm.runInContext(fs.readFileSync(path.join(__dirname,'dist/app.js'),'utf8'),context);
+const math=context.window.ObsMath,data=context.window.OBS_DATA;
+assert.equal(math.aggregate(data.school,'2025-2026','all').inscrits,10222);
+assert.equal(math.aggregate(data.school,'2025-2026','F01').inscrits,2752);
+assert.equal(math.aggregate(data.employment,'2024-2025','all').state,'masked');
+assert.equal(math.rate({state:'ok',n:0,d:0},'n','d'),null);
+assert.equal(math.rate({state:'masked',n:20,d:30},'n','d'),null);
+assert.equal(math.aggregate([{annee:'A',formation_id:'F1',masque:true},{annee:'A',formation_id:'F2',masque:false,n:99}],'A','all').state,'masked');
+assert.ok(node('#kpis').innerHTML.includes('Non observable'));
+assert.ok(node('#kpis').innerHTML.includes('73,2'));
+assert.ok(node('#kpis').innerHTML.includes('71,4'));
+node('#year').value='2024-2025';node('#year').events.change();
+assert.ok(node('#kpis').innerHTML.includes('Masqué'));
+assert.ok(node('#journey-kpis').innerHTML.includes('65,9'));
+node('#formation').value='F01';node('#formation').events.change();
+assert.ok(node('#scope').textContent.includes('Licence Alpha'));
+segments[1].events.click();assert.equal(node('#chart-title').textContent,'Évolution des effectifs inscrits');
+node('#reset').events.click();assert.equal(node('#year').value,'2025-2026');assert.equal(node('#formation').value,'all');
+assert.ok(!/NaN|Infinity|undefined/.test(node('#kpis').innerHTML+node('#chart').innerHTML));
+assert.equal((node('#method-list').innerHTML.match(/class="method"/g)||[]).length,8);
+console.log('18 controles : filtres, cartes, graphique, reset, methodes, censure et masquage valides.');

@@ -1,0 +1,12 @@
+---
+title: "Exploration — données entièrement fictives"
+format: html
+---
+
+Notebook de travail, non inclus dans le rendu principal. Exécuter le pipeline depuis la racine avant rendu.
+
+```{r}
+x <- readRDS("data/processed/tables.rds")
+knitr::kable(data.frame(table = names(x), lignes = vapply(x, nrow, integer(1))))
+summary(x$etudiants[c("annee_naissance", "boursier")])
+```

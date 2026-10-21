@@ -1,0 +1,32 @@
+---
+title: "Reproduire le projet"
+---
+
+## Environnement et calculs
+
+Le projet utilise R, `renv`, Quarto et Python. Power BI Desktop est nécessaire pour ouvrir le projet PBIP.
+
+Depuis la racine du projet :
+
+```r
+renv::restore()
+source("scripts/run_pipeline.R", encoding = "UTF-8")
+source("scripts/run_tests.R", encoding = "UTF-8")
+```
+
+## Construire le site
+
+```bash
+quarto render
+quarto preview
+```
+
+Le site est généré dans `_site/`. Les sources canoniques des rapports restent dans `reports/`. Le script de préparation les expose · la racine pour obtenir des adresses simples, dont `rapport_final.html`.
+
+Les PDF, captures et archives sont préparés avant le rendu. Les commandes complètes sont d’crites dans `docs/18_site_quarto.md`.
+
+## Publier
+
+Le dossier `_site/` peut être publié sur GitHub Pages ou un hébergement statique classique. Les liens relatifs permettent une publication dans un sous-dossier.
+
+Shiny nécessite un serveur R distinct et Power BI un service adapté pour une consultation embarquée.

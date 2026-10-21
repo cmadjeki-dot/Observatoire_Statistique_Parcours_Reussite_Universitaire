@@ -1,0 +1,29 @@
+---
+title: "Présentation orale du projet"
+subtitle: "Données entièrement fictives — aucune statistique officielle"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Ce support accompagne le diaporama Quarto existant dans `reports/presentation.qmd`.
+Il distingue le contenu affiché et le commentaire oral. Les chiffres doivent être
+rapprochés des tables courantes avant présentation.
+
+| Partie | À afficher | À dire | Message clé | Question du jury | Réponse |
+|---|---|---|---|---|---|
+| Contexte | Fiche d’identité | Mission simulée d’un observatoire universitaire | Besoin de pilotage explicite | Qui utilise ces chiffres ? | Chargés d’études et responsables de formation et du pilotage |
+| Problématique | Questions du cahier des charges | Relier le chiffre à une population et à un usage | Définir avant de calculer | Quel choix métier d’abord ? | Population, unité, période et décision attendue |
+| Données | Schéma des huit tables | 15 000 personnes simulées, trois années, cinq formations | Personnes et inscriptions diffèrent | Pourquoi pas 45 000 personnes ? | Une personne peut être inscrite plusieurs années |
+| Qualité | Journal et recette des anomalies | Préserver les bruts et isoler les conflits | Traçabilité des corrections | Pourquoi la quarantaine ? | Aucune règle défendable ne permet de choisir arbitrairement |
+| Méthodes | Dictionnaire des indicateurs | Définir numérateur, dénominateur et manquants | Un taux seul est insuffisant | Que faire d’un inconnu ? | Le conserver et documenter la couverture |
+| Résultats | Tableau annuel calculé | Dernière année : 10 222 inscrits, 73,2 % de validation sur éligibles | Lire le résultat avec ses limites | Les inconnus sont-ils des échecs ? | Non, publier aussi la couverture et le taux parmi connus |
+| Enquêtes | Sollicitations, répondants, avis | Participation et satisfaction utilisent des populations différentes | Non-réponse à examiner | Peut-on extrapoler les avis ? | Pas sans hypothèses et analyse de sélection |
+| Parcours | Cohortes et censure | Une absence ne prouve pas un abandon | Respecter l’observabilité | Pourquoi masquer le devenir récent ? | L’horizon futur n’est pas encore observé |
+| Modèle | AUC, Brier et calibration | Modèle logistique exploratoire sans fuite de cible | Aucune causalité ni décision individuelle | Que vaut une AUC de 0,607 ? | Discrimination limitée sur l’échantillon réservé |
+| Dashboard | Filtres web, Shiny et projet PBIP | Même logique de numérateurs et dénominateurs | Une restitution doit expliquer ses calculs | Shiny fonctionne-t-il sur le site statique ? | Non, un serveur R est nécessaire |
+| Recommandations | Note de pilotage | Améliorer couverture, suivi et documentation avant de comparer | Actions méthodologiques illustratives | Recommandez-vous une action à l’UPEC ? | Non, les données sont entièrement fictives |
+| Reproduction et limites | targets, renv, statuts de recette | Montrer les preuves actuelles et les contrôles non réalisés | Une validation a un périmètre | Tout est-il publié ? | Se référer au bilan ; local ne signifie pas public |
+
+[Discours de trois à cinq minutes et trente questions de jury](../docs/24_preparation_orale.md).

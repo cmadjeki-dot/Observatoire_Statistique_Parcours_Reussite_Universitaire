@@ -1,0 +1,18 @@
+project:
+  type: default
+  output-dir: ../outputs/reports/reports
+  render:
+    - rapport_final.qmd
+    - note_pilotage.qmd
+    - presentation.qmd
+    - enquetes.qmd
+lang: fr
+execute:
+  echo: false
+  warning: false
+  message: false
+format:
+  html:
+    embed-resources: true
+    toc: true
+    theme: cosmo

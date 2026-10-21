@@ -1,0 +1,11 @@
+---
+title: "Réussite — données entièrement fictives"
+format: html
+---
+
+```{r}
+x <- readRDS("data/interim/indicateurs.rds")
+knitr::kable(x$counts$annuel)
+```
+
+La validation sur éligibles n'est pas un taux parmi les seuls résultats connus. Consulter la couverture, les bornes et la diplomation terminale séparément. Les comparaisons fines de travail ne constituent pas des exports de diffusion.

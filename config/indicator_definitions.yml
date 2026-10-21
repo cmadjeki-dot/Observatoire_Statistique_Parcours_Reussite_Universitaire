@@ -1,0 +1,23 @@
+# Dictionnaire de diffusion ; les comptes sont implementes dans R/04_indicators.R.
+version: "1.0"
+scale: "proportion_0_1"
+zero_denominator: "NA"
+indicators:
+  effectif: {numerator: inscrits, denominator: null, unit: etudiants_annee}
+  validation_eligibles: {numerator: validations, denominator: inscrits}
+  couverture_resultats: {numerator: connus, denominator: inscrits}
+  validation_connus: {numerator: validations, denominator: connus}
+  validation_borne_basse: {numerator: validations, denominator: inscrits}
+  validation_borne_haute: {numerator: validations_plus_inconnus, denominator: inscrits}
+  diplomation_terminale: {numerator: diplomes, denominator: eligibles_diplome}
+  passage: {numerator: passages, denominator: eligibles_passage}
+  redoublement: {numerator: redoublements, denominator: suivis}
+  reorientation: {numerator: reorientations, denominator: suivis}
+  sortie_observee: {numerator: sorties_observees, denominator: suivis}
+  situation_inconnue: {numerator: situations_inconnues, denominator: suivis}
+  fin_formation_diplomee: {numerator: fins_diplomees, denominator: suivis}
+  participation_evaluation: {numerator: repondants, denominator: sollicites}
+  satisfaction: {numerator: satisfaits, denominator: avis}
+  emploi_six_mois: {numerator: emploi, denominator: situations_connues}
+  insertion_actifs: {numerator: emploi, denominator: actifs}
+definitions_detaillees: "docs/04_dictionnaire_indicateurs.md"

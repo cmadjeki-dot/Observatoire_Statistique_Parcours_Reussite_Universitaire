@@ -1,0 +1,26 @@
+---
+title: "Évaluation des formations et enquêtes — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Les questionnaires et le protocole existent dans `surveys/`. Ils sont des matrices de transposition LimeSurvey, sans import natif validé. La satisfaction repose sur un item global : un alpha de cohérence interne ne serait pas justifié pour cet indicateur à item unique.
+
+```{r}
+e <- readRDS("data/interim/enquetes.rds")
+knitr::kable(e$evaluation$counts)
+knitr::kable(head(e$evaluation$profiles, 15))
+knitr::kable(e$insertion)
+```
+
+La participation utilise les sollicitations délivrées ; la satisfaction utilise les avis valides. Les écarts de profil des répondants décrivent un risque de non-réponse sans fournir un redressement automatique. Le devenir n’est calculable que lorsque six mois sont observables.

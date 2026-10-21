@@ -1,0 +1,14 @@
+table { font-size: 0.86rem; }
+td, th { overflow-wrap: anywhere; }
+@media print {
+  @page { size: A4; margin: 17mm; }
+  body { font-size: 10pt; }
+  table { font-size: 8pt; width: 100%; }
+  td, th { padding: 3px !important; }
+  img { max-width: 100%; }
+  h2, h3 { break-after: avoid; }
+  tr { break-inside: avoid; }
+  nav, #TOC { display: none; }
+  .page-columns { display: block !important; }
+  main { max-width: 100% !important; width: 100% !important; margin: 0 !important; }
+}

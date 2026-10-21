@@ -1,0 +1,27 @@
+---
+title: "Faisabilité d’une analyse causale — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+## Question et effet d’intérêt
+
+Une question comme « quel serait l’effet d’un accompagnement sur la validation ? » exige un traitement défini, un groupe de comparaison, une temporalité et une population cible. Ces informations ne sont pas observées ici.
+
+## Association, prédiction et causalité
+
+Une association conditionnelle du modèle ne mesure pas une intervention. Une probabilité prédite décrit une cible sous un modèle, pas le résultat contrefactuel du même étudiant sous un autre accompagnement.
+
+## Hypothèses d’identification
+
+L’échangeabilité demanderait de mesurer les causes communes de participation et de réussite. La positivité demanderait des étudiants comparables exposés et non exposés. La cohérence demanderait une intervention homogène. L’absence d’interférence, les manquants et les changements de population devraient aussi être examinés.
+
+Les tables ne contiennent ni affectation randomisée, ni dispositif documenté, ni instrument crédible, ni seuil d’assignation, ni série avant/après permettant de défendre un tel dessin. Les paramètres du générateur sont connus par construction ; cela ne valide pas une identification sur des données institutionnelles.
+
+## Décision
+
+Aucun effet causal n’est estimé. Les comparaisons restent descriptives et le modèle exploratoire. Pour une étude réelle, définir le protocole avant collecte, les covariables antérieures au traitement, la stratégie d’identification et les analyses de sensibilité. Aucun résultat causal n’est fabriqué pour compléter une liste de livrables.

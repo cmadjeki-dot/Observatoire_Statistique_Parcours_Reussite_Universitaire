@@ -1,0 +1,250 @@
+---
+title: "Observatoire statistique des parcours et de la réussite universitaire"
+subtitle: "Rapport final — démonstrateur sur données entièrement fictives"
+author: "Projet de simulation universitaire"
+date: "2026-10-21"
+lang: fr
+number-sections: true
+toc: true
+toc-title: "Table des matières"
+toc-depth: 1
+format:
+  html:
+    css: report.css
+    embed-resources: true
+---
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+if (.Platform$OS.type == "windows") Sys.setlocale("LC_CTYPE", ".UTF-8")
+source("R/functions/common.R", encoding = "UTF-8")
+ind <- readRDS("data/interim/indicateurs.rds")
+quality <- readRDS("data/interim/qualite.rds")
+survey <- readRDS("data/interim/enquetes.rds")
+model <- readRDS("data/interim/modeles.rds")
+annual <- ind$counts$annuel
+last <- tail(annual, 1)
+pc <- function(n, d) ifelse(is.na(ratio(n,d)), "Non calculable", sprintf("%.1f %%", 100 * ratio(n, d)))
+e <- survey$evaluation$counts |>
+  dplyr::group_by(annee) |>
+  dplyr::summarise(dplyr::across(c(sollicites, repondants, avis, satisfaits, sans_avis, items_manquants), sum), .groups = "drop")
+g <- survey$insertion |>
+  dplyr::group_by(annee) |>
+  dplyr::summarise(dplyr::across(c(diplomes, eligibles, non_matures, sollicites, repondants, situations_connues, emploi, actifs), sum), .groups = "drop")
+elast <- e[e$annee == last$annee, ]
+```
+
+# Résumé exécutif {#résumé-exécutif}
+
+Ce projet démontre une chaîne statistique complète : cadrer une commande universitaire, simuler des tables relationnelles, fiabiliser les données, définir les indicateurs, analyser les parcours et enquêtes, puis restituer les résultats dans des tableaux de bord et des rapports reproductibles.
+
+**Toutes les données sont entièrement fictives. Aucun chiffre ne représente un résultat réel de l'UPEC.** Le contexte UPEC / DEVE / SPOF est une inspiration professionnelle, sans affiliation officielle ni accès aux systèmes internes.
+
+En 2025-2026, le jeu préparé compte **`r last$inscrits` inscrits**, avec **`r pc(last$validations, last$inscrits)` de validation annuelle sur les éligibles**. La satisfaction atteint **`r pc(elast$satisfaits, elast$avis)` parmi les avis exprimés**, pour une participation de **`r pc(elast$repondants, elast$sollicites)`**. Le devenir des diplômés de juillet 2026 n'est pas encore observable à six mois au 30 septembre 2026.
+
+La chaîne comporte 104 assertions R validées, des contrôles de navigation et de filtres pour les interfaces web/Shiny et 126 rapprochements R/DAX historiques réussis dans le moteur de Power BI Desktop. Ces vérifications étayent la fiabilité technique du démonstrateur, sans valider une méthode institutionnelle ni la pertinence de décisions réelles.
+
+# Contexte et objectifs {#contexte-et-objectifs}
+
+La commande simulée vise à aider les responsables de formation et de pilotage à comprendre les inscriptions, la réussite, les réorientations, l'évaluation des formations et le devenir des diplômés. Elle mobilise les compétences d'un chargé d'études : explicitation du besoin, maîtrise des populations, contrôle qualité, analyse et restitution accessible.
+
+La question centrale est : **comment exploiter conjointement scolarité et enquêtes pour comprendre les parcours et éclairer le pilotage de l'offre de formation ?**
+
+Les objectifs opérationnels sont de construire un système de tables cohérent, une production vérifiable, des indicateurs aux dénominateurs explicites et des livrables utilisables sans maîtrise de R. Le démonstrateur comprend une interface web, une application R Shiny, un projet Power BI natif et des rapports Quarto. Il n'a pas pour objectif d'établir un classement réel des formations ni une prédiction individuelle.
+
+# Données et périmètre {#données-et-périmètre}
+
+La référence synthétique comprend 15 000 personnes distinctes sur trois années universitaires, de 2023-2024 à 2025-2026, et cinq formations fictives de licence/master. Une seule inscription principale est admise par personne et année. La clôture d'observation est fixée au **30 septembre 2026**.
+
+| Table | Unité d'observation | Contenu |
+|---|---|---|
+| etudiants | personne fictive | profil, année de naissance, bac, bourse, entrée observée |
+| formations | formation fictive | cycle, composante et niveau terminal |
+| inscriptions | inscription principale annuelle | étudiant, formation, niveau, régime |
+| resultats | bilan annuel d'inscription | validation oui/non/inconnue, ECTS, jury |
+| parcours | transition depuis une inscription | passage, redoublement, réorientation, fin diplômée, sortie, inconnu, censure |
+| evaluation | sollicitation d'une inscription | délivrance, réponse, avis et items partiels |
+| diplomes | diplôme obtenu | inscription terminale, type et date |
+| insertion | suivi d'un diplôme à six mois | éligibilité, invitation, réponse et situation |
+
+L'étudiant, l'inscription et le diplôme sont des unités distinctes. La cohorte d'entrée observée dans la fenêtre ne se confond pas avec une cohorte nationale de primo-entrants dans l'enseignement supérieur. La première année inclut un stock d'étudiants déjà avancés dans leur cycle.
+
+La simulation intègre des différences artificielles entre formations, des profils incomplets, des résultats inconnus et des réponses partielles. Les trajectoires sont d'abord rendues cohérentes ; les anomalies techniques sont introduites ensuite dans une copie dédiée au contrôle qualité. Les paramètres et la graine sont documentés dans les sources téléchargeables.
+
+# Qualité et traçabilité {#qualité-et-traçabilité}
+
+La chaîne conserve trois états distincts : référence synthétique cohérente, copie brute avec anomalies contrôlées, puis tables préparées. Les douze injections incluent huit doublons exacts, un profil contradictoire, des ECTS hors domaine, une référence orpheline et une note hors échelle. Elles ont toutes été repérées par la recette.
+
+Le nettoyage ne lit pas le registre des valeurs de référence pour « deviner » les corrections. Les lignes strictement identiques sont dédupliquées ; les conflits et leurs dépendances sont placés en quarantaine. Les valeurs inconnues plausibles ne sont pas imputées arbitrairement.
+
+```{r}
+knitr::kable(quality$volumes, col.names = c("Table", "Lignes brutes", "Lignes préparées"))
+```
+
+Après préparation, **`r length(unique(ind$base$etudiant_id))` personnes** disposent d'au moins une inscription exploitable, pour `r nrow(ind$base)` inscriptions annuelles. Le référentiel étudiant peut conserver des personnes dont toutes les inscriptions ont été écartées ; ces unités ne doivent pas être confondues dans un total.
+
+Les contrôles couvrent unicité des clés, références, domaines, chronologie, cohérence ECTS/validation/diplôme et trajectoires. Le journal garde les clés, le contrôle et la décision. Zéro violation bloquante ne signifie pas que toutes les erreurs imaginables sont identifiables à partir des seules données.
+
+# Méthodes et définitions {#méthodes-et-définitions}
+
+Chaque indicateur précise population, unité, numérateur, dénominateur, exclusions et période. Un dénominateur nul produit une valeur non calculable, pas zéro. Les taux agrégés sont recalculés à partir des comptes, jamais par moyenne simple de pourcentages.
+
+| Indicateur | Numérateur | Dénominateur / règle |
+|---|---|---|
+| Effectif | étudiants distincts avec inscription principale | année et formation définies |
+| Évolution | effectif courant moins précédent | effectif précédent, années consécutives |
+| Validation annuelle | validations connues oui | toutes les inscriptions éligibles |
+| Passage | réinscription au niveau immédiatement supérieur, même formation | cohorte suivable non terminale |
+| Réorientation | réinscription dans une autre formation | cohorte suivable complète |
+| Participation | répondants à au moins un item substantiel | invitations effectivement délivrées |
+| Satisfaction | notes 4 ou 5 à l'item global | avis valides 1 à 5, hors sans avis et items vides |
+| Emploi à six mois | répondants éligibles en emploi | répondants éligibles de situation connue, études comprises |
+
+La validation annuelle ne désigne pas la diplomation terminale. Les résultats inconnus restent au dénominateur du taux sur éligibles sans être qualifiés individuellement d'échecs. Le taux parmi connus et la couverture sont donc présentés ensemble.
+
+Pour la diffusion, les petits comptes positifs et compléments de 1 à 4 sont protégés. Le paquet de tableaux de bord applique une règle conservatrice : masquer toute une famille de comptes pour toutes les formations d'une année si une cellule est sensible. Aucun identifiant individuel ni compte masqué n'est transmis au navigateur. Ce seuil est une convention pédagogique, pas une norme institutionnelle.
+
+# Enquêtes et devenir des diplômés {#enquêtes-et-devenir-des-diplômés}
+
+Le protocole d'évaluation définit population invitée, participation volontaire, modalités 1–5, sans avis, réponses partielles et clôture. Les questionnaires fournis sont des matrices de transposition vers LimeSurvey, sans import natif testé ni envoi réel.
+
+```{r}
+evaluation_table <- e
+evaluation_table$participation <- pc(e$repondants,e$sollicites)
+evaluation_table$satisfaction <- pc(e$satisfaits,e$avis)
+knitr::kable(evaluation_table, col.names = c("Année","Sollicités","Répondants","Avis","Satisfaits","Sans avis","Items vides","Participation","Satisfaction"))
+```
+
+La satisfaction décrit les répondants ayant exprimé un avis valide. La non-réponse et les écarts de participation par profil peuvent entraîner des biais ; aucun redressement ou extrapolation implicite n'est appliqué. Les identifiants sont fictifs mais permettent une jointure par profil : le scénario lié ne doit pas être qualifié d'anonyme au sens d'une collecte réelle.
+
+```{r}
+outcomes <- g
+outcomes$emploi_connus <- ifelse(g$situations_connues>0,pc(g$emploi,g$situations_connues),"Non observable")
+outcomes$insertion_actifs <- ifelse(g$actifs>0,pc(g$emploi,g$actifs),"Non observable")
+knitr::kable(outcomes, col.names = c("Année diplôme","Diplômes","Éligibles","Non matures","Sollicités","Répondants","Connus","Emploi","Actifs","Emploi / connus","Insertion / actifs"))
+```
+
+Le suivi d'insertion utilise six mois **calendaires** après le diplôme. Les `r sum(g$non_matures)` diplômés non encore matures ne sont ni des non-répondants ni des personnes sans emploi. Emploi parmi situations connues et insertion parmi actifs ont des dénominateurs différents. Les totaux annuels de cette étude ne constituent pas les détails par formation du paquet Power BI, où de petits comptes sont supprimés.
+
+# Parcours et suivi longitudinal {#parcours-et-suivi-longitudinal}
+
+Les transitions sont construites après rapprochement des inscriptions de deux années consécutives. Le classement distingue autre formation, passage dans la même formation, redoublement, fin de formation diplômée, sortie explicitement documentée et situation inconnue. Les transitions de la dernière année sont censurées.
+
+```{r}
+knitr::kable(annual[,c("annee","suivis","passages","redoublements","reorientations","sorties_observees","situations_inconnues","fins_diplomees","censures")],
+  col.names=c("Année départ","Suivis","Passages","Redoubl.","Réorient.","Sorties observées","Inconnus","Fins diplômées","Censurés"))
+```
+
+**Une absence de réinscription ne prouve pas un abandon définitif.** Une sortie observée exige une information explicite et datée. Une fin de cycle diplômée ne prouve pas non plus la sortie de tout l'enseignement supérieur. Le passage exclut les niveaux terminaux, contrairement au dénominateur général de réorientation.
+
+Les cohortes de départ 2023-2024 et 2024-2025 sont suivables dans cette fenêtre. La cohorte 2025-2026 ne peut être observée en 2026-2027 à la clôture. Une comparaison longitudinale doit donc considérer simultanément la durée de suivi disponible, les niveaux et la composition des cohortes.
+
+# Modélisation exploratoire {#modélisation-exploratoire}
+
+Le modèle logistique retient la première inscription exploitable chronologique de chaque étudiant et un résultat connu. Le modèle principal utilise des profils bac/bourse complets. Les prédicteurs sont disponibles avant jury : formation, niveau, âge, bac, bourse et année. ECTS, diplôme, résultat du jury, transition future et identifiant sont exclus pour éviter les fuites de cible.
+
+Une seule observation par personne évite la dépendance des inscriptions répétées dans cet exercice initial. Le découpage reproductible 70/30 sépare les étudiants entre apprentissage et évaluation ; il ne mesure pas une prédiction temporelle sur une année future.
+
+```{r}
+knitr::kable(data.frame(indicateur=names(model$diagnostics),
+  valeur=vapply(model$diagnostics,function(v) as.character(round(as.numeric(v),3)),character(1))))
+knitr::kable(model$odds_ratios,digits=3)
+```
+
+L'AUC d'environ **`r sprintf("%.3f",model$diagnostics$auc)`** indique une discrimination limitée. La convergence ne suffit donc pas à justifier un usage individuel. Les diagnostics contrôlent rang, erreurs standards, coefficients extrêmes, événements par paramètre, VIF, Brier et calibration. Les intervalles de Wald à 95 % reposent sur les hypothèses du modèle.
+
+```{r}
+knitr::kable(model$calibration,digits=3)
+knitr::kable(model$predictions_profils,digits=3)
+```
+
+Les probabilités standardisées fixent l'âge à 21 ans, le premier niveau, un bac général, l'absence de bourse et l'année initiale. Elles illustrent le modèle et ne représentent pas une moyenne réelle de formation. Une sensibilité traite les profils manquants comme catégories explicites ; elle ne constitue pas une imputation ni une preuve d'absence de biais.
+
+# Résultats descriptifs {#résultats-descriptifs}
+
+```{r}
+descriptive <- annual[,c("annee","inscrits","validations","connus","inconnus","diplomes","eligibles_diplome")]
+descriptive$validation_eligibles <- pc(descriptive$validations,descriptive$inscrits)
+descriptive$couverture <- pc(descriptive$connus,descriptive$inscrits)
+descriptive$validation_connus <- pc(descriptive$validations,descriptive$connus)
+knitr::kable(descriptive,col.names=c("Année","Inscrits","Validés","Connus","Inconnus","Diplômes","Élig. diplôme","Validation / tous","Couverture","Validation / connus"))
+```
+
+En 2025-2026, `r last$validations` validations sont connues parmi `r last$inscrits` inscriptions éligibles. Avec `r last$inconnus` résultats inconnus, la validation sur l'ensemble des éligibles se situe entre **`r pc(last$validations,last$inscrits)` et `r pc(last$validations+last$inconnus,last$inscrits)`**, selon les résultats hypothétiques des absents. Aucun de ces résultats n'est imputé individuellement.
+
+```{r}
+knitr::include_graphics(normalizePath("outputs/figures/validation.png",winslash="/"),rel_path=FALSE)
+```
+
+La progression des effectifs résulte de l'accumulation des cohortes et des probabilités artificielles de maintien. Elle ne mesure pas l'attractivité d'une université. Les différences de validation combinent paramètres du simulateur et composition des populations ; aucune hiérarchie de qualité des formations n'en découle.
+
+# Indicateurs décisionnels {#indicateurs-décisionnels}
+
+| Question de pilotage | Indicateur à lire | Information complémentaire indispensable |
+|---|---|---|
+| Combien d'inscrits accueille-t-on ? | effectifs distincts par année et formation | périmètre et évolution comparable |
+| Quel niveau de validation observe-t-on ? | validation sur éligibles | couverture, taux parmi connus et bornes |
+| Quels parcours sont suivis ? | passage et réorientation | terminales, inconnus et censure |
+| Que disent les répondants ? | satisfaction | participation, sans avis et non-réponse |
+| Quel devenir après diplôme ? | emploi et insertion parmi actifs | horizon, éligibilité et situations connues |
+
+Le site donne accès à trois modalités de restitution. Le tableau de bord **web** fonctionne dans le navigateur à partir des agrégats protégés. **Shiny** propose les mêmes vues avec des réactifs R ; sa source est disponible et nécessite un serveur R local ou un hébergement adapté. **Power BI** fournit un projet natif PBIP de trois pages, avec filtres année/formation, quatre cartes et évolution de la validation.
+
+Le modèle Power BI, ses sept tables, six relations et 35 mesures ont été chargés dans Desktop. L'actualisation et 126 rapprochements R/DAX sont réussis. La validation du moteur ne se confond pas avec une inspection exhaustive du canvas natif. Aucun service Power BI, hébergement Shiny distant ou rafraîchissement distant n'est actif.
+
+# Recommandations de pilotage {#recommandations-de-pilotage}
+
+Les recommandations suivantes illustrent une méthode de travail, sans prescrire d'action pour une formation réelle à partir de chiffres fictifs.
+
+1. **Sécuriser les définitions avant comparaison.** Valider les populations, les fenêtres et les exclusions avec le commanditaire ; conserver un dictionnaire versionné.
+2. **Qualifier les situations inconnues.** Organiser un suivi explicite plutôt qu'un recodage automatique d'absence de réinscription en abandon.
+3. **Accompagner les taux de leur couverture.** Présenter les comptes, les résultats manquants et les bornes de sensibilité pour éviter une lecture trompeuse de la réussite.
+4. **Examiner la non-réponse.** Comparer participation et profils avant d'utiliser la satisfaction comme élément d'arbitrage ; ne pas confondre sans avis et avis défavorable.
+5. **Industrialiser une production contrôlée.** Séparer données sources, corrections, indicateurs et diffusion ; tester les filtres et les règles de masquage après actualisation.
+
+| Contribution illustrative à l'autoévaluation | Preuve du démonstrateur | Précaution |
+|---|---|---|
+| Connaissance des publics | profils, effectifs et évolutions | périmètre à convenir |
+| Suivi des parcours | validation, transitions et censure | devenir incomplet |
+| Écoute des étudiants | questionnaire et analyse des avis | non-réponse et biais |
+| Devenir des diplômés | horizon de six mois documenté | maturité et situation connue |
+| Fiabilité de la production | journal, versions et tests | contrôles non exhaustifs |
+
+Cette matrice ne revendique aucune conformité à un référentiel HCERES ni validation institutionnelle.
+
+# Limites et précautions {#limites-et-précautions}
+
+- **Simulation intégrale.** Les écarts et les associations proviennent d'un mécanisme artificiel ; ils n'étayent aucune conclusion sur l'UPEC.
+- **Fenêtre courte.** Trois années ne permettent pas de suivre tous les cycles jusqu'au diplôme ni les transitions de la dernière année.
+- **Mécanismes simplifiés.** Pas de pause suivie de retour après sortie, une seule inscription principale et absence de retour après diplôme dans ce scénario.
+- **Manques et sélection.** Profils incomplets, résultats inconnus et non-réponse peuvent modifier les populations analytiques ; aucune correction universelle n'est revendiquée.
+- **Modèle exploratoire.** AUC limitée, hypothèses de modélisation, absence de causalité et aucune utilisation pour une décision individuelle.
+- **Diffusion.** Le seuil de masquage est une convention pédagogique. Une collecte réelle exige un cadrage, des droits d'accès et des règles de confidentialité adaptés.
+- **Outils et déploiements.** L'import LimeSurvey n'est pas testé. Le projet Power BI est livré en PBIP ; aucun PBIX ou déploiement dans le service n'est annoncé. Shiny est une application locale à démarrer. Le site présente fidèlement ces modalités sans les faire passer pour des applications distantes actives.
+
+# Reproductibilité et accès aux livrables {#reproductibilité-et-accès-aux-livrables}
+
+R, `renv`, `targets`, `testthat` et Quarto organisent la chaîne. La graine, la fenêtre et les probabilités figurent dans la configuration. La même graine reproduit des objets identiques à versions R et dépendances constantes. La reprise sans changement et l'invalidation après modification/restauration de graine ont été vérifiées.
+
+```r
+# À la racine du projet après restauration de renv.lock
+renv::restore()
+source("scripts/run_pipeline.R")
+source("scripts/run_tests.R")
+# Dans un terminal à la racine : quarto render
+# Application R : source("scripts/run_shiny.R")
+```
+
+Les sources Quarto produisent les chiffres depuis les sorties R, sans remplacement manuel par les valeurs de la maquette initiale. Le site est un instantané : une nouvelle production doit être rendue, contrôlée puis republiée. La CI est préparée localement mais n'a pas été exécutée sur GitHub pendant la réalisation.
+
+Les accès principaux sont réunis sur le [site de présentation](index.html#livrables) :
+
+- [Tableau de bord web interactif](dashboard/index.html).
+- [Rapport final en PDF](rapport_final.pdf) et [source Quarto](telechargements/rapport_final.qmd).
+- [Note de pilotage de deux pages](note_pilotage.html) et [PDF](note_pilotage.pdf).
+- [Rapport d'enquêtes](enquetes.html) et [présentation de dix minutes](presentation.html).
+- [Projet Power BI natif et agrégats protégés](telechargements/Observatoire_PowerBI.zip).
+- [Application R Shiny](shiny.html) et [archive reproductible du projet](telechargements/Observatoire_Sources.zip).
+
+Les archives de présentation excluent identifiants individuels, données brutes, bibliothèques locales, caches, journaux contenant des chemins utilisateurs et secrets. Seuls les agrégats protégés sélectionnés sont diffusés. Ces liens sont prévus pour la version publiée ; les fichiers locaux restent organisés dans le dépôt du projet.

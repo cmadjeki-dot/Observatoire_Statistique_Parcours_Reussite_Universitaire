@@ -1,0 +1,25 @@
+---
+title: "Contrôle qualité et traçabilité — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Les règles sont dans `R/02_validate_data.R`. La correction ne consulte pas le registre d’injection comme une vérité permettant de reconstruire les lignes.
+
+```{r}
+q <- readRDS("data/interim/qualite.rds")
+knitr::kable(readr::read_csv("outputs/tables/recette_injections.csv", show_col_types = FALSE))
+knitr::kable(head(q$journal, 15))
+```
+
+[Plan qualité](../docs/05_plan_qualite.md). Les journaux détaillés et clés synthétiques restent des objets de travail locaux.

@@ -1,0 +1,22 @@
+Package: observatoire.demo
+Title: Demonstrateur statistique universitaire
+Version: 0.1.0
+Description: Environnement de travail pour un observatoire sur donnees synthetiques.
+Encoding: UTF-8
+Imports:
+    renv,
+    targets,
+    yaml,
+    readr,
+    dplyr,
+    tidyr,
+    ggplot2,
+    testthat,
+    knitr,
+    rmarkdown,
+    broom,
+    shiny,
+    lintr,
+    formatR,
+    styler,
+    rlang

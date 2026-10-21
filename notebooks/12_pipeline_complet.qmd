@@ -1,0 +1,24 @@
+---
+title: "Pipeline reproductible targets — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Les fonctions restent dans `R/` et le graphe dans `_targets.R`. Le notebook inspecte les métadonnées et les fichiers présents ; il ne relance pas les calculs.
+
+```{r}
+knitr::kable(targets::tar_meta(fields = c(name, error, seconds)))
+knitr::kable(data.frame(fichier = list.files("outputs/tables", pattern = "[.]csv$")))
+```
+
+Pour actualiser : `source("scripts/run_pipeline.R")`. targets recalcule les cibles dont le code, les paramètres ou les dépendances ont changé. Une cible sautée parce qu’à jour n’est pas une nouvelle exécution de son calcul.

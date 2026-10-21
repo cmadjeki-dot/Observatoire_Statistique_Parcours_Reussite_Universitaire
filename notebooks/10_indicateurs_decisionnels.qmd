@@ -1,0 +1,25 @@
+---
+title: "Indicateurs décisionnels prioritaires — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Les priorités sont les inscrits, leur évolution, la validation et sa couverture, le passage, la réorientation, la participation, la satisfaction, la diplomation et l’emploi à six mois lorsque calculable.
+
+```{r}
+i <- readRDS("data/interim/indicateurs.rds")
+knitr::kable(i$metrics)
+knitr::kable(i$evolution)
+```
+
+Les formules, dénominateurs, exclusions et millésimes sont centralisés dans `config/indicator_definitions.yml` et [le dictionnaire](../docs/04_dictionnaire_indicateurs.md). Ne pas moyenner les taux de formations ; recomposer les sommes de numérateurs et dénominateurs lorsque la diffusion l’autorise.

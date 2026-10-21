@@ -1,0 +1,10 @@
+# Livrables et copies de diffusion : aucune dependance R supplementaire.
+outputs/
+_site/
+sites/
+data/
+dashboards/powerbi/
+rapport_final.qmd
+note_pilotage.qmd
+enquetes.qmd
+presentation.qmd

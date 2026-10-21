@@ -1,0 +1,90 @@
+---
+title: "Observatoire des parcours et de la réussite"
+subtitle: "Démonstrateur — données entièrement fictives"
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    theme: simple
+    transition: none
+    width: 1280
+    height: 800
+    toc: false
+---
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+i <- readRDS("data/interim/indicateurs.rds")$counts$annuel
+m <- readRDS("data/interim/modeles.rds")$diagnostics
+```
+
+## La commande — 1 minute
+
+- Relier scolarité, parcours, évaluation et devenir.
+- Produire des chiffres vérifiables pour un responsable.
+- Données entièrement fictives ; aucun résultat UPEC.
+
+::: {.notes}
+Présenter le besoin avant les outils. Ne pas prétendre accéder aux systèmes internes.
+:::
+
+## Le périmètre — 1 minute
+
+15 000 personnes générées, trois années, cinq formations fictives.
+
+Une inscription principale par personne et année. Clôture : 30 septembre 2026.
+
+Un étudiant, une inscription, un diplôme : trois unités distinctes.
+
+## La fiabilité — 1 minute 30
+
+Référence cohérente → copie dégradée → contrôles → préparation → indicateurs.
+
+Doublons exacts supprimés, conflits isolés, décisions journalisées. Tests sur petits jeux à résultats connus.
+
+## Définir le dénominateur — 1 minute
+
+En 2025-2026 : **`r tail(i$inscrits,1)` inscrits préparés**.
+
+Validation sur tous les éligibles, validation parmi résultats connus et couverture sont publiées ensemble.
+
+Le résultat inconnu n'est pas un échec individuel.
+
+## Comprendre les parcours — 1 minute
+
+Absence de réinscription ≠ abandon définitif.
+
+Sortie documentée, inconnu et fin de cycle diplômée sont séparés.
+
+Dernière année : suivi futur censuré.
+
+## Écouter les répondants — 1 minute
+
+Participation : réponses / invitations délivrées.
+
+Satisfaction : avis favorables / avis valides.
+
+Insertion : horizon atteint, situation connue et actifs ont des périmètres différents.
+
+## Explorer sans surinterpréter — 1 minute
+
+Une observation par étudiant, variables disponibles avant jury.
+
+Apprentissage et évaluation séparés ; AUC simulée : **`r sprintf("%.3f",m$auc)`**.
+
+Discrimination limitée, aucune causalité et aucune décision individuelle.
+
+## Actualiser et restituer — 1 minute
+
+R + renv + targets + Quarto : chaîne reproductible.
+
+Tableau de bord web, application Shiny et projet Power BI PBIP livrés.
+
+126 contrôles R/DAX validés dans Desktop. Le site réunit les rapports et les téléchargements ; Shiny et Power BI se lancent avec leurs outils respectifs.
+
+## Ce que je retiens — 30 secondes
+
+Un indicateur utile associe une définition stable, une preuve de qualité et une explication accessible.
+
+Le démonstrateur montre la méthode ; les chiffres sont exclusivement fictifs.

@@ -1,0 +1,30 @@
+---
+title: "Restitution décisionnelle — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+```{r}
+i <- readRDS("data/interim/indicateurs.rds")
+e <- readRDS("data/interim/enquetes.rds")
+knitr::kable(i$counts$annuel)
+```
+
+| Constat à vérifier dans les tables | Interprétation | Implication et recommandation |
+|---|---|---|
+| Résultats annuels inconnus | Couverture imparfaite de la validation | Documenter le circuit de remontée avant de comparer les formations |
+| Participation variable selon les profils | Les avis peuvent être sélectionnés | Examiner les profils de non-réponse et le protocole de relance |
+| Horizon récent non observable | Absence de recul, pas absence d’emploi | Programmer une observation à maturité et afficher « non observable » |
+| Discrimination limitée du modèle | Prédiction individuelle peu informative | Conserver le modèle comme exercice exploratoire |
+
+Ces recommandations illustrent une démarche sur données fictives ; elles ne prescrivent aucune action à un service réel de l’UPEC. [Note de pilotage](../reports/note_pilotage.qmd).

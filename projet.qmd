@@ -1,0 +1,40 @@
+---
+title: "Le projet"
+---
+
+## Contexte et objectifs
+
+Cet observatoire démontre comment produire des indicateurs pour le suivi de la scolarité, l’évaluation des formations et le devenir des diplômés. Il illustre les compétences statistiques, informatiques et méthodologiques d’un service universitaire d’aide au pilotage.
+
+Les objectifs sont de fiabiliser les données, suivre les parcours, mesurer la réussite, analyser les enquêtes et restituer des résultats reproductibles.
+
+## Périmètre
+
+La simulation comporte huit tables sources, trois années universitaires (2023-2024 à 2025-2026) et cinq formations fictives. La dernière année comprend 10 222 inscrits. Les effectifs annuels ne s’additionnent pas pour obtenir le nombre de personnes distinctes sur toute la période.
+
+## Démarche
+
+1. Cadrer les besoins et définir les populations de référence.
+2. Simuler les données et détecter les anomalies introduites.
+3. Construire des indicateurs aux dénominateurs explicites.
+4. Analyser les parcours et les réponses aux enquêtes.
+5. Restituer les résultats dans les tableaux de bord et les rapports.
+6. Documenter les contrôles, les limites et la reproduction.
+
+## Outils et vérifications
+
+| Besoin | Outil |
+|---|---|
+| Préparation et analyse | R, pipeline reproductible |
+| Application interactive | Shiny |
+| Restitution d’cisionnelle | Power BI et DAX |
+| Rapports et site | Quarto |
+| Vérification | Tests R et rapprochements R/DAX |
+
+Le projet comprend 85 assertions R valid’es et 126 rapprochements avec le moteur Power BI. Ces contrôles techniques ne constituent pas une validation institutionnelle.
+
+## Limites
+
+Les données fictives ne permettent aucune conclusion sur une formation réelle. Le devenir à six mois de la dernière promotion n’est pas observable au 30 septembre 2026.
+
+[Lire les résultats et les méthodes détaillées](rapport_final.qmd)

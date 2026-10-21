@@ -1,0 +1,813 @@
+{
+  "name": "Observatoire",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "fr-FR",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "fr-FR",
+    "tables": [
+      {
+        "name": "DimFormation",
+        "columns": [
+          {
+            "name": "formation_id",
+            "dataType": "string",
+            "sourceColumn": "formation_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "libelle_fictif",
+            "dataType": "string",
+            "sourceColumn": "libelle_fictif",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "composante_fictive",
+            "dataType": "string",
+            "sourceColumn": "composante_fictive",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cycle",
+            "dataType": "string",
+            "sourceColumn": "cycle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "niveau_terminal",
+            "dataType": "int64",
+            "sourceColumn": "niveau_terminal",
+            "summarizeBy": "none",
+            "formatString": "0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimFormation",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "fxCsv(\"dim_formation.csv\", {\"formation_id\", \"libelle_fictif\", \"composante_fictive\", \"cycle\"}, false)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimAnnee",
+        "columns": [
+          {
+            "name": "annee",
+            "dataType": "string",
+            "sourceColumn": "annee",
+            "summarizeBy": "none",
+            "sortByColumn": "ordre"
+          },
+          {
+            "name": "ordre",
+            "dataType": "int64",
+            "sourceColumn": "ordre",
+            "summarizeBy": "none",
+            "formatString": "0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimAnnee",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "fxCsv(\"dim_annee.csv\", {\"annee\"}, false)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimAnneeGraph",
+        "columns": [
+          {
+            "name": "annee",
+            "dataType": "string",
+            "sourceColumn": "annee",
+            "summarizeBy": "none",
+            "sortByColumn": "ordre"
+          },
+          {
+            "name": "ordre",
+            "dataType": "int64",
+            "sourceColumn": "ordre",
+            "summarizeBy": "none",
+            "formatString": "0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimAnneeGraph",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "fxCsv(\"dim_annee.csv\", {\"annee\"}, false)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactScolarite",
+        "columns": [
+          {
+            "name": "annee",
+            "dataType": "string",
+            "sourceColumn": "annee",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "formation_id",
+            "dataType": "string",
+            "sourceColumn": "formation_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "inscrits",
+            "dataType": "int64",
+            "sourceColumn": "inscrits",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "validations",
+            "dataType": "int64",
+            "sourceColumn": "validations",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "connus",
+            "dataType": "int64",
+            "sourceColumn": "connus",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "inconnus",
+            "dataType": "int64",
+            "sourceColumn": "inconnus",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "diplomes",
+            "dataType": "int64",
+            "sourceColumn": "diplomes",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "eligibles_diplome",
+            "dataType": "int64",
+            "sourceColumn": "eligibles_diplome",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "suivis",
+            "dataType": "int64",
+            "sourceColumn": "suivis",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "eligibles_passage",
+            "dataType": "int64",
+            "sourceColumn": "eligibles_passage",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "passages",
+            "dataType": "int64",
+            "sourceColumn": "passages",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "redoublements",
+            "dataType": "int64",
+            "sourceColumn": "redoublements",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "reorientations",
+            "dataType": "int64",
+            "sourceColumn": "reorientations",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "sorties_observees",
+            "dataType": "int64",
+            "sourceColumn": "sorties_observees",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "situations_inconnues",
+            "dataType": "int64",
+            "sourceColumn": "situations_inconnues",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "fins_diplomees",
+            "dataType": "int64",
+            "sourceColumn": "fins_diplomees",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "censures",
+            "dataType": "int64",
+            "sourceColumn": "censures",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "masque",
+            "dataType": "boolean",
+            "sourceColumn": "masque",
+            "summarizeBy": "none",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactScolarite",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "fxCsv(\"fait_scolarite.csv\", {\"annee\", \"formation_id\", \"masque\"}, true)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactEvaluation",
+        "columns": [
+          {
+            "name": "annee",
+            "dataType": "string",
+            "sourceColumn": "annee",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "formation_id",
+            "dataType": "string",
+            "sourceColumn": "formation_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "invites",
+            "dataType": "int64",
+            "sourceColumn": "invites",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "sollicites",
+            "dataType": "int64",
+            "sourceColumn": "sollicites",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "repondants",
+            "dataType": "int64",
+            "sourceColumn": "repondants",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "avis",
+            "dataType": "int64",
+            "sourceColumn": "avis",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "satisfaits",
+            "dataType": "int64",
+            "sourceColumn": "satisfaits",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "sans_avis",
+            "dataType": "int64",
+            "sourceColumn": "sans_avis",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "items_manquants",
+            "dataType": "int64",
+            "sourceColumn": "items_manquants",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "non_reponse",
+            "dataType": "int64",
+            "sourceColumn": "non_reponse",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "masque",
+            "dataType": "boolean",
+            "sourceColumn": "masque",
+            "summarizeBy": "none",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactEvaluation",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "fxCsv(\"fait_evaluation.csv\", {\"annee\", \"formation_id\", \"masque\"}, true)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactInsertion",
+        "columns": [
+          {
+            "name": "annee",
+            "dataType": "string",
+            "sourceColumn": "annee",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "formation_id",
+            "dataType": "string",
+            "sourceColumn": "formation_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "diplomes",
+            "dataType": "int64",
+            "sourceColumn": "diplomes",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "eligibles",
+            "dataType": "int64",
+            "sourceColumn": "eligibles",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "non_matures",
+            "dataType": "int64",
+            "sourceColumn": "non_matures",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "sollicites",
+            "dataType": "int64",
+            "sourceColumn": "sollicites",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "repondants",
+            "dataType": "int64",
+            "sourceColumn": "repondants",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "situations_connues",
+            "dataType": "int64",
+            "sourceColumn": "situations_connues",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "emploi",
+            "dataType": "int64",
+            "sourceColumn": "emploi",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "recherche_emploi",
+            "dataType": "int64",
+            "sourceColumn": "recherche_emploi",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "etudes",
+            "dataType": "int64",
+            "sourceColumn": "etudes",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "inactif",
+            "dataType": "int64",
+            "sourceColumn": "inactif",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "actifs",
+            "dataType": "int64",
+            "sourceColumn": "actifs",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "non_reponse",
+            "dataType": "int64",
+            "sourceColumn": "non_reponse",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "situations_inconnues",
+            "dataType": "int64",
+            "sourceColumn": "situations_inconnues",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "formatString": "0"
+          },
+          {
+            "name": "masque",
+            "dataType": "boolean",
+            "sourceColumn": "masque",
+            "summarizeBy": "none",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactInsertion",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "fxCsv(\"fait_insertion.csv\", {\"annee\", \"formation_id\", \"masque\"}, true)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Indicateurs",
+        "columns": [
+          {
+            "name": "vide",
+            "dataType": "int64",
+            "sourceColumn": "vide",
+            "isHidden": true
+          }
+        ],
+        "measures": [
+          {
+            "name": "Scolarite masquee",
+            "expression": "COUNTROWS(FILTER(FactScolarite, FactScolarite[masque] = TRUE())) > 0",
+            "displayFolder": "Diagnostic",
+            "isHidden": true
+          },
+          {
+            "name": "Evaluation masquee",
+            "expression": "COUNTROWS(FILTER(FactEvaluation, FactEvaluation[masque] = TRUE())) > 0",
+            "displayFolder": "Diagnostic",
+            "isHidden": true
+          },
+          {
+            "name": "Insertion masquee",
+            "expression": "COUNTROWS(FILTER(FactInsertion, FactInsertion[masque] = TRUE())) > 0",
+            "displayFolder": "Diagnostic",
+            "isHidden": true
+          },
+          {
+            "name": "Inscrits",
+            "expression": "IF(HASONEVALUE(DimAnnee[annee]) && NOT([Scolarite masquee]), SUM(FactScolarite[inscrits]), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Inscriptions annuelles cumulees",
+            "expression": "IF(NOT([Scolarite masquee]), SUM(FactScolarite[inscrits]), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Validation eligibles",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[validations]), SUM(FactScolarite[inscrits])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Couverture resultats",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[connus]), SUM(FactScolarite[inscrits])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Validation connus",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[validations]), SUM(FactScolarite[connus])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Validation borne haute",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[validations]) + SUM(FactScolarite[inconnus]), SUM(FactScolarite[inscrits])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Diplomation",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[diplomes]), SUM(FactScolarite[eligibles_diplome])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Passage",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[passages]), SUM(FactScolarite[eligibles_passage])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Redoublement",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[redoublements]), SUM(FactScolarite[suivis])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Reorientation",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[reorientations]), SUM(FactScolarite[suivis])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Sortie observee",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[sorties_observees]), SUM(FactScolarite[suivis])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Situation inconnue",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[situations_inconnues]), SUM(FactScolarite[suivis])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Fin de formation diplomee",
+            "expression": "IF(NOT([Scolarite masquee]), DIVIDE(SUM(FactScolarite[fins_diplomees]), SUM(FactScolarite[suivis])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Evolution",
+            "expression": "VAR UnAn = HASONEVALUE(DimAnnee[annee])\nVAR Ordre = SELECTEDVALUE(DimAnnee[ordre])\nVAR Actuel = [Inscrits]\nVAR Precedent = CALCULATE([Inscrits], FILTER(ALL(DimAnnee), DimAnnee[ordre] = Ordre - 1))\nRETURN IF(UnAn && NOT(ISBLANK(Actuel)) && NOT(ISBLANK(Precedent)), DIVIDE(Actuel - Precedent, Precedent), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Participation evaluation",
+            "expression": "IF(NOT([Evaluation masquee]), DIVIDE(SUM(FactEvaluation[repondants]), SUM(FactEvaluation[sollicites])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Satisfaction",
+            "expression": "IF(NOT([Evaluation masquee]), DIVIDE(SUM(FactEvaluation[satisfaits]), SUM(FactEvaluation[avis])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Couverture avis",
+            "expression": "IF(NOT([Evaluation masquee]), DIVIDE(SUM(FactEvaluation[avis]), SUM(FactEvaluation[repondants])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Avis valides",
+            "expression": "IF(NOT([Evaluation masquee]), SUM(FactEvaluation[avis]), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Eligibles insertion",
+            "expression": "IF(NOT([Insertion masquee]), SUM(FactInsertion[eligibles]), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Non matures",
+            "expression": "IF(NOT([Insertion masquee]), SUM(FactInsertion[non_matures]), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Participation insertion",
+            "expression": "IF(NOT([Insertion masquee]), DIVIDE(SUM(FactInsertion[repondants]), SUM(FactInsertion[sollicites])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Emploi six mois",
+            "expression": "IF(NOT([Insertion masquee]), DIVIDE(SUM(FactInsertion[emploi]), SUM(FactInsertion[situations_connues])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Insertion actifs",
+            "expression": "IF(NOT([Insertion masquee]), DIVIDE(SUM(FactInsertion[emploi]), SUM(FactInsertion[actifs])), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Situations connues",
+            "expression": "IF(NOT([Insertion masquee]), SUM(FactInsertion[situations_connues]), BLANK())",
+            "displayFolder": "Indicateurs",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Emploi affichage",
+            "expression": "SWITCH(TRUE(), NOT(HASONEVALUE(DimAnnee[annee])), \"Sélectionner une année\", [Insertion masquee], \"Masqué\", SUM(FactInsertion[eligibles]) = 0, \"Non observable\", ISBLANK([Emploi six mois]), \"Non calculable\", FORMAT([Emploi six mois], \"0.0 %\", \"fr-FR\"))",
+            "displayFolder": "Indicateurs"
+          },
+          {
+            "name": "Passage affichage",
+            "expression": "SWITCH(TRUE(), NOT(HASONEVALUE(DimAnnee[annee])), \"Sélectionner une année\", [Scolarite masquee], \"Masqué\", SUM(FactScolarite[suivis]) = 0, \"Non observable\", ISBLANK([Passage]), \"Non calculable\", FORMAT([Passage], \"0.0 %\", \"fr-FR\"))",
+            "displayFolder": "Indicateurs"
+          },
+          {
+            "name": "Reorientation affichage",
+            "expression": "SWITCH(TRUE(), NOT(HASONEVALUE(DimAnnee[annee])), \"Sélectionner une année\", [Scolarite masquee], \"Masqué\", SUM(FactScolarite[suivis]) = 0, \"Non observable\", FORMAT([Reorientation], \"0.0 %\", \"fr-FR\"))",
+            "displayFolder": "Indicateurs"
+          },
+          {
+            "name": "Sortie affichage",
+            "expression": "SWITCH(TRUE(), [Scolarite masquee], \"Masqué\", SUM(FactScolarite[suivis]) = 0, \"Non observable\", FORMAT([Sortie observee], \"0.0 %\", \"fr-FR\"))",
+            "displayFolder": "Indicateurs"
+          },
+          {
+            "name": "Inconnus affichage",
+            "expression": "SWITCH(TRUE(), [Scolarite masquee], \"Masqué\", SUM(FactScolarite[suivis]) = 0, \"Non observable\", FORMAT([Situation inconnue], \"0.0 %\", \"fr-FR\"))",
+            "displayFolder": "Indicateurs"
+          },
+          {
+            "name": "Validation evolution",
+            "expression": "VAR AnneeGraph = SELECTEDVALUE(DimAnneeGraph[annee])\nRETURN CALCULATE([Validation eligibles], REMOVEFILTERS(DimAnnee), TREATAS({AnneeGraph}, DimAnnee[annee]))",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Effectifs evolution",
+            "expression": "VAR AnneeGraph = SELECTEDVALUE(DimAnneeGraph[annee])\nRETURN CALCULATE([Inscrits], REMOVEFILTERS(DimAnnee), TREATAS({AnneeGraph}, DimAnnee[annee]))",
+            "displayFolder": "Indicateurs",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Satisfaction evolution",
+            "expression": "VAR AnneeGraph = SELECTEDVALUE(DimAnneeGraph[annee])\nRETURN CALCULATE([Satisfaction], REMOVEFILTERS(DimAnnee), TREATAS({AnneeGraph}, DimAnnee[annee]))",
+            "displayFolder": "Indicateurs",
+            "formatString": "0.0%"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Indicateurs",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "#table(type table [vide = Int64.Type], {{0}})"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "FactScolarite_DimFormation",
+        "fromTable": "FactScolarite",
+        "fromColumn": "formation_id",
+        "toTable": "DimFormation",
+        "toColumn": "formation_id",
+        "crossFilteringBehavior": "oneDirection",
+        "fromCardinality": "many",
+        "toCardinality": "one"
+      },
+      {
+        "name": "FactScolarite_DimAnnee",
+        "fromTable": "FactScolarite",
+        "fromColumn": "annee",
+        "toTable": "DimAnnee",
+        "toColumn": "annee",
+        "crossFilteringBehavior": "oneDirection",
+        "fromCardinality": "many",
+        "toCardinality": "one"
+      },
+      {
+        "name": "FactEvaluation_DimFormation",
+        "fromTable": "FactEvaluation",
+        "fromColumn": "formation_id",
+        "toTable": "DimFormation",
+        "toColumn": "formation_id",
+        "crossFilteringBehavior": "oneDirection",
+        "fromCardinality": "many",
+        "toCardinality": "one"
+      },
+      {
+        "name": "FactEvaluation_DimAnnee",
+        "fromTable": "FactEvaluation",
+        "fromColumn": "annee",
+        "toTable": "DimAnnee",
+        "toColumn": "annee",
+        "crossFilteringBehavior": "oneDirection",
+        "fromCardinality": "many",
+        "toCardinality": "one"
+      },
+      {
+        "name": "FactInsertion_DimFormation",
+        "fromTable": "FactInsertion",
+        "fromColumn": "formation_id",
+        "toTable": "DimFormation",
+        "toColumn": "formation_id",
+        "crossFilteringBehavior": "oneDirection",
+        "fromCardinality": "many",
+        "toCardinality": "one"
+      },
+      {
+        "name": "FactInsertion_DimAnnee",
+        "fromTable": "FactInsertion",
+        "fromColumn": "annee",
+        "toTable": "DimAnnee",
+        "toColumn": "annee",
+        "crossFilteringBehavior": "oneDirection",
+        "fromCardinality": "many",
+        "toCardinality": "one"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DossierExports",
+        "kind": "m",
+        "expression": "\"C:/Users/admin/Desktop/Observatoire_Statistique_Parcours_Reussite_Universitaire/dashboards/powerbi/Observatoire/Data/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      },
+      {
+        "name": "fxCsv",
+        "kind": "m",
+        "expression": "(nom as text, textes as list, optional masque as nullable logical) as table =>\nlet\n    Source = Csv.Document(File.Contents(DossierExports & nom),\n        [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Entetes = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    Vides = Table.ReplaceValue(Entetes, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Entetes)),\n    Numeriques = List.Difference(Table.ColumnNames(Vides), textes),\n    TypesNumeriques = List.Transform(Numeriques, each {_, Int64.Type}),\n    TypesTexte = List.Transform(List.RemoveItems(textes, {\"masque\"}), each {_, type text}),\n    Types = Table.TransformColumnTypes(Vides, TypesNumeriques & TypesTexte, \"en-US\"),\n    Resultat = if masque = true then\n        Table.TransformColumns(Types, {{\"masque\", each if _ = null then error \"Masque absent\"\n            else if Text.Upper(_) = \"TRUE\" then true\n            else if Text.Upper(_) = \"FALSE\" then false\n            else error \"Masque invalide\", type logical}})\n        else Types\nin\n    Resultat"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+code,groupe,type,libelle,modalites,obligatoire,pertinence,variable_export
+INFO,information,texte,"Démonstration sur données fictives. Aucun questionnaire réel envoyé.",,non,1,
+CONSENT,information,choix_unique,"Souhaitez-vous participer à cette enquête simulée ?","Y=Oui|N=Non",oui,1,consentement
+SAT_GLOBAL,formation,echelle,"Globalement, êtes-vous satisfait de votre formation ?","1=Pas du tout|2=Peu|3=Moyennement|4=Satisfait|5=Très satisfait|99=Sans avis",non,"CONSENT == 'Y'",satisfaction_1_5
+ORG,formation,echelle,"Comment évaluez-vous l'organisation de la formation ?","1=Très insuffisante|2=Insuffisante|3=Moyenne|4=Bonne|5=Très bonne|99=Sans avis",non,"CONSENT == 'Y'",organisation_1_5
+FIN,cloture,texte,"Merci. Les réponses partielles sont conservées si au moins un item substantiel est renseigné.",,non,"CONSENT == 'Y'",

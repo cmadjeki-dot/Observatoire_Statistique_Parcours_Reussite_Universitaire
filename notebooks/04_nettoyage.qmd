@@ -1,0 +1,25 @@
+---
+title: "Nettoyage et préparation — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Les données brutes ne sont pas modifiées. Les doublons exacts sont supprimés, les conflits non arbitrables et leurs dépendances mis en quarantaine ; les manquants substantiels ne sont pas automatiquement imputés.
+
+```{r}
+q <- readRDS("data/interim/qualite.rds")
+knitr::kable(q$volumes)
+knitr::kable(as.data.frame(table(q$journal$controle, q$journal$statut)))
+```
+
+Les tables finales sont dans `data/processed/`. Consulter `R/03_prepare_data.R` et le journal pour les décisions exactes.

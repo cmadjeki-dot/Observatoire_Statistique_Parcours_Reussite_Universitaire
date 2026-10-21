@@ -1,0 +1,11 @@
+---
+title: "Parcours — données entièrement fictives"
+format: html
+---
+
+```{r}
+x <- readRDS("data/processed/tables.rds")
+knitr::kable(as.data.frame(table(x$parcours$statut, x$parcours$censure)))
+```
+
+La censure décrit une limite de la fenêtre, pas un résultat de parcours. Ne jamais recoder un devenir inconnu en abandon.

@@ -1,0 +1,12 @@
+project:
+  type: default
+  output-dir: ../outputs/notebooks
+  render:
+    - "*.qmd"
+lang: fr
+execute:
+  warning: false
+  message: false
+format:
+  html:
+    toc: true

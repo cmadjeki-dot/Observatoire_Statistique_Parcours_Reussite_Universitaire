@@ -1,0 +1,50 @@
+table,variable,type,cle_primaire,nullable,modalites_ou_etendue,n_manquants
+etudiants,etudiant_id,character,TRUE,FALSE,E00001 ... E15000,0
+etudiants,annee_naissance,integer,FALSE,FALSE,1996 | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007,0
+etudiants,type_bac,character,FALSE,TRUE,general | professionnel | technologique,582
+etudiants,boursier,integer,FALSE,TRUE,0 | 1,604
+etudiants,annee_entree_observee,character,FALSE,FALSE,2023-2024 | 2024-2025 | 2025-2026,0
+etudiants,primo_entrant_observe,logical,FALSE,FALSE,FALSE | TRUE,0
+formations,formation_id,character,TRUE,FALSE,F01 | F02 | F03 | F04 | F05,0
+formations,libelle_fictif,character,FALSE,FALSE,Licence Alpha | Licence Beta | Licence Gamma | Master Delta | Master Epsilon,0
+formations,composante_fictive,character,FALSE,FALSE,Pole A | Pole B | Pole C,0
+formations,cycle,character,FALSE,FALSE,Licence | Master,0
+formations,niveau_terminal,integer,FALSE,FALSE,2 | 3,0
+inscriptions,inscription_id,character,TRUE,FALSE,I1_E00011 ... I3_E15000,0
+inscriptions,etudiant_id,character,FALSE,FALSE,E00001 ... E15000,0
+inscriptions,formation_id,character,FALSE,FALSE,F01 | F02 | F03 | F04 | F05,0
+inscriptions,annee,character,FALSE,FALSE,2023-2024 | 2024-2025 | 2025-2026,0
+inscriptions,niveau,integer,FALSE,FALSE,1 | 2 | 3,0
+inscriptions,regime,character,FALSE,FALSE,initiale | reprise,0
+resultats,inscription_id,character,TRUE,FALSE,I1_E00011 ... I3_E15000,0
+resultats,validation,character,FALSE,FALSE,inconnue | non | oui,0
+resultats,ects,integer,FALSE,TRUE,0 | 12 | 18 | 24 | 30 | 36 | 42 | 48 | 54 | 6 | 60,639
+resultats,date_jury,Date,FALSE,FALSE,2024-07-15 | 2025-07-15 | 2026-07-15,0
+parcours,inscription_id,character,TRUE,FALSE,I1_E00011 ... I3_E15000,0
+parcours,statut,character,FALSE,FALSE,censuree | fin_formation_diplomee | inconnue | passage | redoublement | reorientation | sortie_observee,0
+parcours,inscription_suivante_id,character,FALSE,TRUE,I2_E00011 ... I3_E15000,15000
+parcours,source_information,character,FALSE,FALSE,absence_information | diplome | fenetre_close | inscriptions | suivi_fictif_explicite,0
+parcours,date_observation,Date,FALSE,FALSE,2024-11-30 | 2025-11-30 | 2026-09-30,0
+parcours,censure,logical,FALSE,FALSE,FALSE | TRUE,0
+evaluation,evaluation_id,character,TRUE,FALSE,Q_I1_E00011 ... Q_I3_E15000,0
+evaluation,inscription_id,character,FALSE,FALSE,I1_E00011 ... I3_E15000,0
+evaluation,vague,character,FALSE,FALSE,2023-2024 | 2024-2025 | 2025-2026,0
+evaluation,sollicitation_delivree,logical,FALSE,FALSE,FALSE | TRUE,0
+evaluation,consentement,logical,FALSE,FALSE,FALSE | TRUE,0
+evaluation,reponse,logical,FALSE,FALSE,FALSE | TRUE,0
+evaluation,satisfaction_1_5,integer,FALSE,TRUE,1 | 2 | 3 | 4 | 5,14349
+evaluation,motif_satisfaction,character,FALSE,FALSE,avis | item_manquant | non_reponse | non_sollicite | sans_avis,0
+evaluation,organisation_1_5,integer,FALSE,TRUE,1 | 2 | 3 | 4 | 5,12350
+diplomes,diplome_id,character,TRUE,FALSE,D00001 ... D04773,0
+diplomes,inscription_id,character,FALSE,FALSE,I1_E00036 ... I3_E14985,0
+diplomes,date_diplome,Date,FALSE,FALSE,2024-07-15 | 2025-07-15 | 2026-07-15,0
+diplomes,type_diplome,character,FALSE,FALSE,Licence | Master,0
+insertion,insertion_id,character,TRUE,FALSE,S_D00001 ... S_D04773,0
+insertion,diplome_id,character,FALSE,FALSE,D00001 ... D04773,0
+insertion,vague,character,FALSE,FALSE,six_mois,0
+insertion,date_reference,Date,FALSE,FALSE,2025-01-15 | 2026-01-15 | 2027-01-15,0
+insertion,date_enquete,Date,FALSE,TRUE,2025-01-15 | 2026-01-15,1589
+insertion,eligible,logical,FALSE,FALSE,FALSE | TRUE,0
+insertion,sollicitation_delivree,logical,FALSE,FALSE,FALSE | TRUE,0
+insertion,reponse,logical,FALSE,FALSE,FALSE | TRUE,0
+insertion,situation,character,FALSE,TRUE,emploi | etudes | inactif | inconnue | recherche_emploi,2918

@@ -1,0 +1,9 @@
+@page { size: A4; margin: 17mm 18mm; }
+body { font-family: Arial, sans-serif; color: #183044; max-width: 174mm; margin: auto; font-size: 11pt; line-height: 1.35; }
+h1 { font-size: 21pt; } h2 { font-size: 15pt; color: #136a78; } h3 { font-size: 12pt; }
+.note-page { break-after: page; page-break-after: always; }
+.note-page:last-child { break-after: auto; page-break-after: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 10pt; }
+td,th { padding: 5px; border-bottom: 1px solid #ccd5da; text-align: left; }
+.quarto-title-block { display: none; }
+@media screen { .note-page { border: 1px solid #ccd5da; padding: 24px; margin: 20px 0; } }

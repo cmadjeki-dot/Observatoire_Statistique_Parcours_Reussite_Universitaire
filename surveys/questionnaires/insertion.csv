@@ -1,0 +1,5 @@
+code,groupe,type,libelle,modalites,obligatoire,pertinence,variable_export
+INFO,information,texte,"Démonstration fictive : situation à six mois calendaires du diplôme.",,non,ELIGIBLE==1,
+CONSENT,information,choix_unique,"Souhaitez-vous participer ?","Y=Oui|N=Non",oui,ELIGIBLE==1,
+SITUATION,devenir,choix_unique,"Quelle est votre situation principale à la date de référence ?","1=Emploi|2=Recherche emploi|3=Études|4=Inactivité|99=Inconnue",non,"CONSENT == 'Y'",situation
+FIN,cloture,texte,"Merci pour votre participation simulée.",,non,"CONSENT == 'Y'",

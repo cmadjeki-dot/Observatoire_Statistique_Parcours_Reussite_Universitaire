@@ -1,0 +1,10 @@
+testthat::test_that("le modele ne contient aucune fuite et converge", {
+  x <- readRDS(project_path("data/interim/modeles.rds"))
+  testthat::expect_equal(x$diagnostics$etudiants_communs, 0L)
+  testthat::expect_true(x$diagnostics$convergence)
+  variables <- all.vars(stats::formula(x$model))
+  testthat::expect_false(any(c("ects", "statut", "date_jury", "diplome_id", "inscription_id") %in% variables))
+  testthat::expect_true(all(is.finite(x$odds_ratios$odds_ratio)))
+  testthat::expect_true(x$diagnostics$evenements_par_parametre >= 10)
+  testthat::expect_true(x$diagnostics$auc > 0 & x$diagnostics$auc < 1)
+})

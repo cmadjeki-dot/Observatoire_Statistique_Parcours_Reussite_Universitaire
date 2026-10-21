@@ -1,0 +1,26 @@
+---
+title: "Analyse descriptive des étudiants — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Les effectifs annuels ne s’additionnent pas pour obtenir un nombre de personnes distinctes. Comparer les formations suppose d’examiner la composition et la couverture des résultats.
+
+```{r}
+i <- readRDS("data/interim/indicateurs.rds")
+knitr::kable(i$counts$annuel)
+knitr::kable(i$counts$formation)
+knitr::include_graphics(normalizePath("outputs/figures/validation.png", winslash = "/"), rel_path = FALSE)
+```
+
+La validation sur tous les éligibles, la validation parmi les résultats connus et la diplomation sont des indicateurs distincts. Les petits effectifs de travail ne sont pas destinés à la diffusion publique.

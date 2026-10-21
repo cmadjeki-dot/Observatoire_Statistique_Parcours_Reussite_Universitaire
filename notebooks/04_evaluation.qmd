@@ -1,0 +1,11 @@
+---
+title: "Évaluation — données entièrement fictives"
+format: html
+---
+
+```{r}
+x <- readRDS("data/interim/enquetes.rds")
+knitr::kable(x$evaluation$counts[c("annee", "formation_id", "sollicites", "repondants", "avis", "satisfaits")])
+```
+
+Notebook de travail : distinguer participation, avis exprimés et satisfaction. Le rapport d'enquêtes fournit les agrégats de restitution et les limites de non-réponse.

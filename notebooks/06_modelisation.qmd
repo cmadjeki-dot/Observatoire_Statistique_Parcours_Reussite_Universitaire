@@ -1,0 +1,26 @@
+---
+title: "Modélisation exploratoire de la réussite — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+Le modèle existant est justifié dans [la méthodologie](../docs/09_methodologie_modeles.md). Une inscription par personne évite la répétition des observations dans ce premier modèle. Un modèle mixte demanderait une autre unité et une justification de la structure de dépendance ; cinq formations fictives ne suffisent pas à imposer ce choix.
+
+```{r}
+m <- readRDS("data/interim/modeles.rds")
+knitr::kable(m$diagnostics)
+knitr::kable(m$odds_ratios)
+knitr::kable(m$calibration)
+```
+
+Les coefficients sont des associations conditionnelles du mécanisme simulé. Les intervalles de Wald reposent sur les hypothèses du modèle. L’AUC et le Brier concernent l’échantillon réservé. Le modèle ajusté est sauvegardé dans le composant `model` de l’objet RDS ; aucune décision individuelle n’est autorisée par ces résultats.

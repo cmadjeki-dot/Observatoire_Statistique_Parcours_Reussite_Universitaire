@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+  "pageOrder": [
+    "01_synthese",
+    "02_parcours",
+    "03_methode"
+  ],
+  "activePageName": "01_synthese"
+}

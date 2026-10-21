@@ -1,0 +1,27 @@
+---
+title: "Génération des données synthétiques — données entièrement fictives"
+lang: fr
+format:
+  html:
+    toc: true
+---
+
+Support pédagogique local. Exécuter le pipeline depuis la racine avant rendu. Les tables détaillées de travail ne sont pas des exports publics.
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+source("R/functions/common.R", encoding = "UTF-8")
+```
+
+La référence propre est dans `data/synthetic/`. `data/raw/` conserve la copie dégradée après injection d’anomalies : ne pas écraser cette dernière avec une nouvelle génération propre.
+
+```{r}
+for (p in list.files("R", "[.]R$", full.names = TRUE)) source(p, encoding = "UTF-8")
+cfg <- read_config()
+x <- generate_data(cfg)
+stopifnot(identical(x, generate_data(cfg)), nrow(validate_data(x, cfg)) == 0L)
+knitr::kable(data.frame(table = names(x), lignes = vapply(x, nrow, integer(1))))
+```
+
+La graine est fixée dans la configuration. L’écriture des fichiers est assurée par targets, pas par ce notebook de lecture et de vérification.

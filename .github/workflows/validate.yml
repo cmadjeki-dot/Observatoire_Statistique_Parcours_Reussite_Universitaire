@@ -1,0 +1,37 @@
+name: Validation R
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.6.1'
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-renv@v2
+      - name: Pipeline reproductible
+        shell: Rscript {0}
+        run: source("scripts/run_pipeline.R")
+      - name: Tests statistiques et qualite
+        shell: Rscript {0}
+        run: source("scripts/run_tests.R")
+      - name: Audit lintr sans observation
+        shell: Rscript {0}
+        run: source("scripts/audit_code.R")
+  powerbi:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Dependances du validateur
+        run: python -m pip install -r requirements-powerbi.txt
+      - name: Schemas et references Power BI
+        run: python scripts/validate_powerbi_project.py

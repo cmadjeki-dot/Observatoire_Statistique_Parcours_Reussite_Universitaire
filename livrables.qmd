@@ -1,0 +1,24 @@
+---
+title: "Rapports et téléchargements"
+---
+
+## Rapports Quarto
+
+| Document | Lecture | Téléchargement |
+|---|---|---|
+| Rapport final, treize chapitres | [HTML](rapport_final.qmd) | [PDF](rapport_final.pdf) |
+| Note de pilotage | [HTML](note_pilotage.qmd) | [PDF](note_pilotage.pdf) |
+| Enquêtes | [HTML](enquetes.qmd) | [PDF](enquetes.pdf) |
+| Présentation | [Diaporama](presentation.qmd) | [Source](telechargements/presentation.qmd) |
+
+## Applications et sources
+
+- [Tableau de bord web interactif](dashboard/index.html)
+- [Application Shiny · ZIP](telechargements/Observatoire_Shiny.zip)
+- [Projet Power BI · ZIP](telechargements/Observatoire_PowerBI.zip)
+- [Sources du projet et exports agrégés · ZIP](telechargements/Observatoire_Sources.zip)
+- [Source du rapport final](telechargements/rapport_final.qmd)
+- [Rapprochements R/DAX](telechargements/recette_powerbi.csv)
+- [Fiche des indicateurs](telechargements/fiche_indicateurs.md)
+
+Les archives publiques comprennent des données agrégées. Les tables individuelles et les caches d’exécution sont exclus.
