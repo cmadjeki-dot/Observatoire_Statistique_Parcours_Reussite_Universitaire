@@ -1,0 +1,53 @@
+---
+title: "Évaluation et devenir des diplômés"
+subtitle: "Données entièrement fictives — aucune statistique UPEC"
+lang: fr
+format: html
+---
+
+```{r}
+#| include: false
+source("scripts/activate_environment.R")
+ev <- readRDS("data/interim/enquetes.rds")
+pct <- function(x) ifelse(is.na(x), "Non calculable", sprintf("%.1f %%", 100*x))
+```
+
+## Évaluation des formations
+
+La réponse peut être partielle. La satisfaction exclut les sans avis et les items vides ; la participation repose sur toutes les invitations délivrées. Les notes décrivent les répondants, sans extrapolation automatique aux non-répondants.
+
+```{r}
+#| echo: false
+annual_ev <- ev$evaluation$counts |>
+  dplyr::group_by(annee) |>
+  dplyr::summarise(dplyr::across(c(sollicites, repondants, avis, satisfaits, sans_avis, items_manquants), sum), .groups = "drop") |>
+  dplyr::mutate(participation = repondants / sollicites, satisfaction = satisfaits / avis)
+knitr::kable(annual_ev, digits = 3)
+```
+
+## Non-réponse
+
+```{r}
+#| echo: false
+profiles <- ev$evaluation$profiles |>
+  dplyr::group_by(type_bac) |>
+  dplyr::summarise(sollicites = sum(sollicites), repondants = sum(repondants), .groups = "drop") |>
+  dplyr::mutate(participation = repondants / sollicites)
+knitr::kable(profiles, digits = 3)
+```
+
+Les différences de participation sont issues de probabilités artificielles. Les manques de profil restent visibles ; aucune pondération ni hypothèse de représentativité n'est appliquée.
+
+## Devenir à six mois
+
+```{r}
+#| echo: false
+annual_emp <- ev$insertion |>
+  dplyr::group_by(annee) |>
+  dplyr::summarise(dplyr::across(c(diplomes, eligibles, non_matures, sollicites, repondants, situations_connues, emploi, actifs), sum), .groups = "drop") |>
+  dplyr::mutate(emploi_situations_connues = ifelse(situations_connues > 0, emploi / situations_connues, NA_real_),
+                insertion_actifs = ifelse(actifs > 0, emploi / actifs, NA_real_))
+knitr::kable(annual_emp, digits = 3)
+```
+
+L'emploi est rapporté aux situations connues, études comprises. L'insertion parmi actifs est une autre mesure, limitée à emploi + recherche. Les diplômés dont les six mois ne sont pas atteints sont non matures, pas non-répondants. Questionnaire et protocole dans `surveys/` ; la matrice LimeSurvey n'a pas été importée dans un serveur.

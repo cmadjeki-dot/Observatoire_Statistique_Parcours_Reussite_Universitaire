@@ -1,0 +1,47 @@
+[
+  {
+    "fichier": "enquetes.qmd",
+    "octets": 2372,
+    "sha256": "7744663cb1dd259cfce983287593514de9bed397325400402e2f8bc63c2018b2"
+  },
+  {
+    "fichier": "fiche_indicateurs.md",
+    "octets": 5914,
+    "sha256": "d607666d81c8685b4c257942425a83bdc748d3da2f9901d7959cc9158818b91f"
+  },
+  {
+    "fichier": "note_pilotage.qmd",
+    "octets": 4262,
+    "sha256": "e2a0b0671012f7a8d4dbde5b6fca2824d720326d496000591958c75330f73ac7"
+  },
+  {
+    "fichier": "Observatoire_PowerBI.zip",
+    "octets": 81445,
+    "sha256": "764b1344a2058ac51a978e38866619d36ef1b09c46a824e0bd66346e35b87996"
+  },
+  {
+    "fichier": "Observatoire_Shiny.zip",
+    "octets": 92820,
+    "sha256": "851218d0d83390c2935135dc13adc28d4842a6db26d358609c4ebd6e5ec96052"
+  },
+  {
+    "fichier": "Observatoire_Sources.zip",
+    "octets": 648648,
+    "sha256": "1d6e425ed2d783d00134df0ba97d7f78b186769573c852771d4b7531b2b0a41e"
+  },
+  {
+    "fichier": "presentation.qmd",
+    "octets": 2909,
+    "sha256": "d41c6a83fc615b5dc3fb8ae0edb918837fed3d280619736d5b4c803bf90a0a96"
+  },
+  {
+    "fichier": "rapport_final.qmd",
+    "octets": 22191,
+    "sha256": "8faba4a0d4d2421d23f1d425cc02b3a187c7c21a48280a71b014c73faa9b701e"
+  },
+  {
+    "fichier": "recette_powerbi.csv",
+    "octets": 11075,
+    "sha256": "19627a91b7c30d48c66b015426546e55ddc81104cf52bbe1915d4bb6db21616f"
+  }
+]

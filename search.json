@@ -1,0 +1,317 @@
+[
+  {
+    "objectID": "presentation.html#la-commande-1-minute",
+    "href": "presentation.html#la-commande-1-minute",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "La commande — 1 minute",
+    "text": "La commande — 1 minute\n\nRelier scolarité, parcours, évaluation et devenir.\nProduire des chiffres vérifiables pour un responsable.\nDonnées entièrement fictives ; aucun résultat UPEC.\n\n\nPrésenter le besoin avant les outils. Ne pas prétendre accéder aux systèmes internes."
+  },
+  {
+    "objectID": "presentation.html#le-périmètre-1-minute",
+    "href": "presentation.html#le-périmètre-1-minute",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "Le périmètre — 1 minute",
+    "text": "Le périmètre — 1 minute\n15 000 personnes générées, trois années, cinq formations fictives.\nUne inscription principale par personne et année. Clôture : 30 septembre 2026.\nUn étudiant, une inscription, un diplôme : trois unités distinctes."
+  },
+  {
+    "objectID": "presentation.html#la-fiabilité-1-minute-30",
+    "href": "presentation.html#la-fiabilité-1-minute-30",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "La fiabilité — 1 minute 30",
+    "text": "La fiabilité — 1 minute 30\nRéférence cohérente → copie dégradée → contrôles → préparation → indicateurs.\nDoublons exacts supprimés, conflits isolés, décisions journalisées. Tests sur petits jeux à résultats connus."
+  },
+  {
+    "objectID": "presentation.html#définir-le-dénominateur-1-minute",
+    "href": "presentation.html#définir-le-dénominateur-1-minute",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "Définir le dénominateur — 1 minute",
+    "text": "Définir le dénominateur — 1 minute\nEn 2025-2026 : 10222 inscrits préparés.\nValidation sur tous les éligibles, validation parmi résultats connus et couverture sont publiées ensemble.\nLe résultat inconnu n’est pas un échec individuel."
+  },
+  {
+    "objectID": "presentation.html#comprendre-les-parcours-1-minute",
+    "href": "presentation.html#comprendre-les-parcours-1-minute",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "Comprendre les parcours — 1 minute",
+    "text": "Comprendre les parcours — 1 minute\nAbsence de réinscription ≠ abandon définitif.\nSortie documentée, inconnu et fin de cycle diplômée sont séparés.\nDernière année : suivi futur censuré."
+  },
+  {
+    "objectID": "presentation.html#écouter-les-répondants-1-minute",
+    "href": "presentation.html#écouter-les-répondants-1-minute",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "Écouter les répondants — 1 minute",
+    "text": "Écouter les répondants — 1 minute\nParticipation : réponses / invitations délivrées.\nSatisfaction : avis favorables / avis valides.\nInsertion : horizon atteint, situation connue et actifs ont des périmètres différents."
+  },
+  {
+    "objectID": "presentation.html#explorer-sans-surinterpréter-1-minute",
+    "href": "presentation.html#explorer-sans-surinterpréter-1-minute",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "Explorer sans surinterpréter — 1 minute",
+    "text": "Explorer sans surinterpréter — 1 minute\nUne observation par étudiant, variables disponibles avant jury.\nApprentissage et évaluation séparés ; AUC simulée : 0.607.\nDiscrimination limitée, aucune causalité et aucune décision individuelle."
+  },
+  {
+    "objectID": "presentation.html#actualiser-et-restituer-1-minute",
+    "href": "presentation.html#actualiser-et-restituer-1-minute",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "Actualiser et restituer — 1 minute",
+    "text": "Actualiser et restituer — 1 minute\nR + renv + targets + Quarto : chaîne reproductible.\nTableau de bord web, application Shiny et projet Power BI PBIP livrés.\n126 contrôles R/DAX validés dans Desktop. Le site réunit les rapports et les téléchargements ; Shiny et Power BI se lancent avec leurs outils respectifs."
+  },
+  {
+    "objectID": "presentation.html#ce-que-je-retiens-30-secondes",
+    "href": "presentation.html#ce-que-je-retiens-30-secondes",
+    "title": "Observatoire des parcours et de la réussite",
+    "section": "Ce que je retiens — 30 secondes",
+    "text": "Ce que je retiens — 30 secondes\nUn indicateur utile associe une définition stable, une preuve de qualité et une explication accessible.\nLe démonstrateur montre la méthode ; les chiffres sont exclusivement fictifs."
+  },
+  {
+    "objectID": "note_pilotage.html",
+    "href": "note_pilotage.html",
+    "title": "Note de pilotage",
+    "section": "",
+    "text": "Note de pilotage — démonstration — 21 octobre 2026\nDonnées entièrement fictives. Aucun résultat réel de l’UPEC.\n\n\nIllustrer une chaîne statistique reproductible pour éclairer inscriptions, validation, transitions et enquêtes. Trois années (2023-2024 à 2025-2026), cinq formations fictives, 15 000 personnes générées, une inscription principale par année. Clôture au 30 septembre 2026.\n\n\n\n\n10222 inscrits en 2025-2026, contre 8026 l’année précédente. Cette évolution est construite par le simulateur et ne mesure aucune attractivité réelle.\n73.2 % de validation sur les éligibles, avec 288 résultats inconnus. Le taux parmi les résultats connus vaut 75.3 % ; le diplôme terminal constitue un indicateur distinct.\n71.4 % de satisfaction parmi les avis exprimés, pour une participation de 50.7 %. Ce résultat décrit les répondants et ne peut être étendu automatiquement aux non-répondants.\n\n\n\n\nDoublons exacts supprimés ; conflits et dépendances en quarantaine ; aucun résultat imputé arbitrairement. Les tests vérifient clés, domaines, temporalité, dénominateurs et rapprochements. Les comptes et la couverture accompagnent les taux. Les différences observées proviennent des probabilités artificielles et des compositions simulées.\n1 / 2 — Démonstrateur sans affiliation officielle à l’UPEC."
+  },
+  {
+    "objectID": "note_pilotage.html#objet-et-périmètre",
+    "href": "note_pilotage.html#objet-et-périmètre",
+    "title": "Note de pilotage",
+    "section": "",
+    "text": "Illustrer une chaîne statistique reproductible pour éclairer inscriptions, validation, transitions et enquêtes. Trois années (2023-2024 à 2025-2026), cinq formations fictives, 15 000 personnes générées, une inscription principale par année. Clôture au 30 septembre 2026."
+  },
+  {
+    "objectID": "note_pilotage.html#trois-constats-issus-du-jeu-préparé",
+    "href": "note_pilotage.html#trois-constats-issus-du-jeu-préparé",
+    "title": "Note de pilotage",
+    "section": "",
+    "text": "10222 inscrits en 2025-2026, contre 8026 l’année précédente. Cette évolution est construite par le simulateur et ne mesure aucune attractivité réelle.\n73.2 % de validation sur les éligibles, avec 288 résultats inconnus. Le taux parmi les résultats connus vaut 75.3 % ; le diplôme terminal constitue un indicateur distinct.\n71.4 % de satisfaction parmi les avis exprimés, pour une participation de 50.7 %. Ce résultat décrit les répondants et ne peut être étendu automatiquement aux non-répondants."
+  },
+  {
+    "objectID": "note_pilotage.html#fiabilité",
+    "href": "note_pilotage.html#fiabilité",
+    "title": "Note de pilotage",
+    "section": "",
+    "text": "Doublons exacts supprimés ; conflits et dépendances en quarantaine ; aucun résultat imputé arbitrairement. Les tests vérifient clés, domaines, temporalité, dénominateurs et rapprochements. Les comptes et la couverture accompagnent les taux. Les différences observées proviennent des probabilités artificielles et des compositions simulées.\n1 / 2 — Démonstrateur sans affiliation officielle à l’UPEC."
+  },
+  {
+    "objectID": "note_pilotage.html#trois-points-à-discuter-avec-un-commanditaire",
+    "href": "note_pilotage.html#trois-points-à-discuter-avec-un-commanditaire",
+    "title": "Note de pilotage",
+    "section": "Trois points à discuter avec un commanditaire",
+    "text": "Trois points à discuter avec un commanditaire\nSécuriser le suivi. Ne pas assimiler l’absence de réinscription à un abandon. Séparer situations inconnues, sorties explicitement documentées et fins de cycle diplômées. Le devenir en 2026-2027 n’est pas observable : aucun taux de transition 2025-2026 n’est fourni.\nQualifier les enquêtes. Examiner les écarts de participation selon les profils avant d’interpréter la satisfaction. À six mois, les diplômés de juillet 2026 ne sont pas encore éligibles à la clôture. Distinguer emploi parmi situations connues et insertion parmi actifs ; ne pas comparer des dénominateurs différents.\nOrganiser la production. Conserver un dictionnaire versionné, un journal qualité et une recette des filtres. Les actualisations sont reproductibles avec R, renv et targets. Une règle de diffusion conservatrice protège les petits comptes et leurs compléments avant export."
+  },
+  {
+    "objectID": "note_pilotage.html#ce-que-le-démonstrateur-permet-de-montrer",
+    "href": "note_pilotage.html#ce-que-le-démonstrateur-permet-de-montrer",
+    "title": "Note de pilotage",
+    "section": "Ce que le démonstrateur permet de montrer",
+    "text": "Ce que le démonstrateur permet de montrer\nPrendre en charge une commande, définir des populations, fiabiliser des tables relationnelles, construire des indicateurs, analyser la non-réponse et restituer les limites à un responsable. Le modèle logistique est exploratoire ; il ne constitue pas un outil de décision individuelle et n’établit aucun effet causal."
+  },
+  {
+    "objectID": "note_pilotage.html#travaux-restant-à-valider",
+    "href": "note_pilotage.html#travaux-restant-à-valider",
+    "title": "Note de pilotage",
+    "section": "Travaux restant à valider",
+    "text": "Travaux restant à valider\nLes tableaux de bord web et R Shiny sont réalisés. Le projet Power BI natif PBIP de trois pages est construit ; 126 rapprochements R/DAX sont validés dans son moteur. L’inspection exhaustive du canvas reste distincte de ces contrôles. L’import LimeSurvey n’est pas testé. Aucun déploiement dans le service Power BI ni hébergement Shiny distant n’est effectué.\nCes livrables peuvent illustrer une contribution à l’autoévaluation d’une formation, sans certification de conformité HCERES. Toute application réelle demanderait un cadrage institutionnel et des règles de confidentialité adaptés.\n2 / 2 — Sources : sorties R du démonstrateur, méthode dans docs/."
+  },
+  {
+    "objectID": "reproduire.html",
+    "href": "reproduire.html",
+    "title": "Reproduire le projet",
+    "section": "",
+    "text": "Le projet utilise R, renv, Quarto et Python. Power BI Desktop est nécessaire pour ouvrir le projet PBIP.\nDepuis la racine du projet :\nrenv::restore()\nsource(\"scripts/run_pipeline.R\", encoding = \"UTF-8\")\nsource(\"scripts/run_tests.R\", encoding = \"UTF-8\")"
+  },
+  {
+    "objectID": "reproduire.html#environnement-et-calculs",
+    "href": "reproduire.html#environnement-et-calculs",
+    "title": "Reproduire le projet",
+    "section": "",
+    "text": "Le projet utilise R, renv, Quarto et Python. Power BI Desktop est nécessaire pour ouvrir le projet PBIP.\nDepuis la racine du projet :\nrenv::restore()\nsource(\"scripts/run_pipeline.R\", encoding = \"UTF-8\")\nsource(\"scripts/run_tests.R\", encoding = \"UTF-8\")"
+  },
+  {
+    "objectID": "reproduire.html#construire-le-site",
+    "href": "reproduire.html#construire-le-site",
+    "title": "Reproduire le projet",
+    "section": "Construire le site",
+    "text": "Construire le site\nquarto render\nquarto preview\nLe site est généré dans _site/. Les sources canoniques des rapports restent dans reports/. Le script de préparation les expose · la racine pour obtenir des adresses simples, dont rapport_final.html.\nLes PDF, captures et archives sont préparés avant le rendu. Les commandes complètes sont d’crites dans docs/18_site_quarto.md."
+  },
+  {
+    "objectID": "reproduire.html#publier",
+    "href": "reproduire.html#publier",
+    "title": "Reproduire le projet",
+    "section": "Publier",
+    "text": "Publier\nLe dossier _site/ peut être publié sur GitHub Pages ou un hébergement statique classique. Les liens relatifs permettent une publication dans un sous-dossier.\nShiny nécessite un serveur R distinct et Power BI un service adapté pour une consultation embarquée."
+  },
+  {
+    "objectID": "indicateurs.html",
+    "href": "indicateurs.html",
+    "title": "Comprendre les indicateurs",
+    "section": "",
+    "text": "Indicateur\nCalcul simplifié\nPrécaution\n\n\n\n\nEffectifs inscrits\nÉtudiants distincts dans le périmètre\nAnnée, formation, inscriptions multiples\n\n\nÉvolution des inscriptions\n\\((N_t-N_{t-1})/N_{t-1} \\times 100\\)\nPérimètre stable et dénominateur non nul\n\n\nRéussite\nValidations / population éligible\nDéfinition de la validation et résultats inconnus\n\n\nPassage\nPassages en année supérieure / cohorte\nDate d’observation et suivi\n\n\nRéorientation\nRéorientés / cohorte suivie\nRéorientation interne ou externe observable\n\n\nParticipation\nRépondants / personnes effectivement sollicitées\nInvitations délivrées et non-réponse\n\n\nSatisfaction\nSatisfaits / répondants ayant exprimé un avis\nSans-avis et seuil de satisfaction\n\n\nEmploi\nDiplômés en emploi / population méthodologique retenue\nHorizon, poursuites d’études et inconnus"
+  },
+  {
+    "objectID": "indicateurs.html#comparer-les-résultats",
+    "href": "indicateurs.html#comparer-les-résultats",
+    "title": "Comprendre les indicateurs",
+    "section": "Comparer les résultats",
+    "text": "Comparer les résultats\nUne comparaison suppose des périodes, des exclusions et des populations compatibles. Chaque pourcentage doit être accompagné de son dénominateur. Un résultat masqué ou non observable ne vaut pas zéro.\nLa validation de 2025-2026 est de 73,2 % des inscrits éligibles, tandis que la satisfaction de 71,4 % porte sur les avis exprimés.\nMéthodes détaillées · Fiche pour l’entretien"
+  },
+  {
+    "objectID": "projet.html",
+    "href": "projet.html",
+    "title": "Le projet",
+    "section": "",
+    "text": "Cet observatoire démontre comment produire des indicateurs pour le suivi de la scolarité, l’évaluation des formations et le devenir des diplômés. Il illustre les compétences statistiques, informatiques et méthodologiques d’un service universitaire d’aide au pilotage.\nLes objectifs sont de fiabiliser les données, suivre les parcours, mesurer la réussite, analyser les enquêtes et restituer des résultats reproductibles."
+  },
+  {
+    "objectID": "projet.html#contexte-et-objectifs",
+    "href": "projet.html#contexte-et-objectifs",
+    "title": "Le projet",
+    "section": "",
+    "text": "Cet observatoire démontre comment produire des indicateurs pour le suivi de la scolarité, l’évaluation des formations et le devenir des diplômés. Il illustre les compétences statistiques, informatiques et méthodologiques d’un service universitaire d’aide au pilotage.\nLes objectifs sont de fiabiliser les données, suivre les parcours, mesurer la réussite, analyser les enquêtes et restituer des résultats reproductibles."
+  },
+  {
+    "objectID": "projet.html#périmètre",
+    "href": "projet.html#périmètre",
+    "title": "Le projet",
+    "section": "Périmètre",
+    "text": "Périmètre\nLa simulation comporte huit tables sources, trois années universitaires (2023-2024 à 2025-2026) et cinq formations fictives. La dernière année comprend 10 222 inscrits. Les effectifs annuels ne s’additionnent pas pour obtenir le nombre de personnes distinctes sur toute la période."
+  },
+  {
+    "objectID": "projet.html#démarche",
+    "href": "projet.html#démarche",
+    "title": "Le projet",
+    "section": "Démarche",
+    "text": "Démarche\n\nCadrer les besoins et définir les populations de référence.\nSimuler les données et détecter les anomalies introduites.\nConstruire des indicateurs aux dénominateurs explicites.\nAnalyser les parcours et les réponses aux enquêtes.\nRestituer les résultats dans les tableaux de bord et les rapports.\nDocumenter les contrôles, les limites et la reproduction."
+  },
+  {
+    "objectID": "projet.html#outils-et-vérifications",
+    "href": "projet.html#outils-et-vérifications",
+    "title": "Le projet",
+    "section": "Outils et vérifications",
+    "text": "Outils et vérifications\n\n\n\nBesoin\nOutil\n\n\n\n\nPréparation et analyse\nR, pipeline reproductible\n\n\nApplication interactive\nShiny\n\n\nRestitution d’cisionnelle\nPower BI et DAX\n\n\nRapports et site\nQuarto\n\n\nVérification\nTests R et rapprochements R/DAX\n\n\n\nLe projet comprend 85 assertions R valid’es et 126 rapprochements avec le moteur Power BI. Ces contrôles techniques ne constituent pas une validation institutionnelle."
+  },
+  {
+    "objectID": "projet.html#limites",
+    "href": "projet.html#limites",
+    "title": "Le projet",
+    "section": "Limites",
+    "text": "Limites\nLes données fictives ne permettent aucune conclusion sur une formation réelle. Le devenir à six mois de la dernière promotion n’est pas observable au 30 septembre 2026.\nLire les résultats et les méthodes détaillées"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Observatoire statistique des parcours et de la réussite universitaire",
+    "section": "",
+    "text": "Un projet complet d’observatoire universitaire : préparation des données, qualité, analyse des parcours, enquêtes et restitution des indicateurs.\nR · Shiny · Power BI · Quarto\nExplorer les tableaux de bord Lire le rapport final"
+  },
+  {
+    "objectID": "index.html#le-projet-en-quelques-chiffres",
+    "href": "index.html#le-projet-en-quelques-chiffres",
+    "title": "Observatoire statistique des parcours et de la réussite universitaire",
+    "section": "Le projet en quelques chiffres",
+    "text": "Le projet en quelques chiffres\n\n\n10 222 Inscrits dans la simulation en 2025-2026.\n\n\n73,2 % Validation annuelle parmi les inscrits éligibles.\n\n\n71,4 % Satisfaction parmi les avis exprimés."
+  },
+  {
+    "objectID": "index.html#une-démarche-complte",
+    "href": "index.html#une-démarche-complte",
+    "title": "Observatoire statistique des parcours et de la réussite universitaire",
+    "section": "Une démarche compl’te",
+    "text": "Une démarche compl’te\nLe projet suit trois années universitaires et cinq formations fictives. Il relie inscriptions, résultats, parcours et enquêtes, avec des définitions documentées et des exports agrégés protégés.\nDécouvrir les objectifs et la démarche →"
+  },
+  {
+    "objectID": "index.html#explorer-les-résultats",
+    "href": "index.html#explorer-les-résultats",
+    "title": "Observatoire statistique des parcours et de la réussite universitaire",
+    "section": "Explorer les résultats",
+    "text": "Explorer les résultats\n\n\n\nAperçu du tableau de bord interactif\n\n\nFiltrez les données par année et formation dans le tableau de bord web, puis d’couvrez les versions Shiny et Power BI."
+  },
+  {
+    "objectID": "index.html#livrables",
+    "href": "index.html#livrables",
+    "title": "Observatoire statistique des parcours et de la réussite universitaire",
+    "section": "Rapports et livrables",
+    "text": "Rapports et livrables\n\nRapport final en treize chapitres\nNote de pilotage et PDF\nRapport sur les enquêtes\nPrésentation du projet\nTéléchargements et sources"
+  },
+  {
+    "objectID": "tableaux_de_bord.html",
+    "href": "tableaux_de_bord.html",
+    "title": "Tableaux de bord",
+    "section": "",
+    "text": "Les trois versions utilisent les mêmes exports agrégés de la simulation. Les définitions et les règles de protection sont documentées dans le rapport."
+  },
+  {
+    "objectID": "tableaux_de_bord.html#tableau-de-bord-web",
+    "href": "tableaux_de_bord.html#tableau-de-bord-web",
+    "title": "Tableaux de bord",
+    "section": "Tableau de bord web",
+    "text": "Tableau de bord web\nFiltrez par année et formation, puis parcourez les vues de synthèse, de parcours et de méthodes.\nOuvrir en pleine page"
+  },
+  {
+    "objectID": "tableaux_de_bord.html#shiny",
+    "href": "tableaux_de_bord.html#shiny",
+    "title": "Tableaux de bord",
+    "section": "Application Shiny",
+    "text": "Application Shiny\nL’application R Shiny propose une exploration interactive des indicateurs. Elle se lance sur un ordinateur équipé de R ; le site statique ne peut pas exécuter son serveur.\n\n\n\nAperçu de Shiny\n\n\nTélécharger l’application Shiny\nAprès extraction, ouvrir le projet R puis lancer :\nrenv::restore()\nsource(\"scripts/run_shiny.R\", encoding = \"UTF-8\")"
+  },
+  {
+    "objectID": "tableaux_de_bord.html#powerbi",
+    "href": "tableaux_de_bord.html#powerbi",
+    "title": "Tableaux de bord",
+    "section": "Power BI",
+    "text": "Power BI\nLe projet natif comprend trois pages : synthèse, parcours et méthodes, avec les données agrégées et le modèle de calcul.\nTélécharger le projet Power BI\n\nExtraire l’archive et ouvrir Observatoire.pbip dans Power BI Desktop.\nLire LIRE_AVANT_OUVERTURE.md.\nAdapter DossierExports au dossier Data/ extrait, avec un / final.\nActualiser les données.\n\nUne publication dans Power BI Service serait nécessaire pour proposer une consultation embarquée en ligne. Le projet fourni est consultable dans Desktop."
+  },
+  {
+    "objectID": "livrables.html",
+    "href": "livrables.html",
+    "title": "Rapports et téléchargements",
+    "section": "",
+    "text": "Document\nLecture\nTéléchargement\n\n\n\n\nRapport final, treize chapitres\nHTML\nPDF\n\n\nNote de pilotage\nHTML\nPDF\n\n\nEnquêtes\nHTML\nPDF\n\n\nPrésentation\nDiaporama\nSource"
+  },
+  {
+    "objectID": "livrables.html#rapports-quarto",
+    "href": "livrables.html#rapports-quarto",
+    "title": "Rapports et téléchargements",
+    "section": "",
+    "text": "Document\nLecture\nTéléchargement\n\n\n\n\nRapport final, treize chapitres\nHTML\nPDF\n\n\nNote de pilotage\nHTML\nPDF\n\n\nEnquêtes\nHTML\nPDF\n\n\nPrésentation\nDiaporama\nSource"
+  },
+  {
+    "objectID": "livrables.html#applications-et-sources",
+    "href": "livrables.html#applications-et-sources",
+    "title": "Rapports et téléchargements",
+    "section": "Applications et sources",
+    "text": "Applications et sources\n\nTableau de bord web interactif\nApplication Shiny · ZIP\nProjet Power BI · ZIP\nSources du projet et exports agrégés · ZIP\nSource du rapport final\nRapprochements R/DAX\nFiche des indicateurs\n\nLes archives publiques comprennent des données agrégées. Les tables individuelles et les caches d’exécution sont exclus."
+  },
+  {
+    "objectID": "rapport_final.html",
+    "href": "rapport_final.html",
+    "title": "Observatoire statistique des parcours et de la réussite universitaire",
+    "section": "",
+    "text": "1 Résumé exécutif\nCe projet démontre une chaîne statistique complète : cadrer une commande universitaire, simuler des tables relationnelles, fiabiliser les données, définir les indicateurs, analyser les parcours et enquêtes, puis restituer les résultats dans des tableaux de bord et des rapports reproductibles.\nToutes les données sont entièrement fictives. Aucun chiffre ne représente un résultat réel de l’UPEC. Le contexte UPEC / DEVE / SPOF est une inspiration professionnelle, sans affiliation officielle ni accès aux systèmes internes.\nEn 2025-2026, le jeu préparé compte 10222 inscrits, avec 73.2 % de validation annuelle sur les éligibles. La satisfaction atteint 71.4 % parmi les avis exprimés, pour une participation de 50.7 %. Le devenir des diplômés de juillet 2026 n’est pas encore observable à six mois au 30 septembre 2026.\nLa chaîne comporte 104 assertions R validées, des contrôles de navigation et de filtres pour les interfaces web/Shiny et 126 rapprochements R/DAX historiques réussis dans le moteur de Power BI Desktop. Ces vérifications étayent la fiabilité technique du démonstrateur, sans valider une méthode institutionnelle ni la pertinence de décisions réelles.\n\n\n2 Contexte et objectifs\nLa commande simulée vise à aider les responsables de formation et de pilotage à comprendre les inscriptions, la réussite, les réorientations, l’évaluation des formations et le devenir des diplômés. Elle mobilise les compétences d’un chargé d’études : explicitation du besoin, maîtrise des populations, contrôle qualité, analyse et restitution accessible.\nLa question centrale est : comment exploiter conjointement scolarité et enquêtes pour comprendre les parcours et éclairer le pilotage de l’offre de formation ?\nLes objectifs opérationnels sont de construire un système de tables cohérent, une production vérifiable, des indicateurs aux dénominateurs explicites et des livrables utilisables sans maîtrise de R. Le démonstrateur comprend une interface web, une application R Shiny, un projet Power BI natif et des rapports Quarto. Il n’a pas pour objectif d’établir un classement réel des formations ni une prédiction individuelle.\n\n\n3 Données et périmètre\nLa référence synthétique comprend 15 000 personnes distinctes sur trois années universitaires, de 2023-2024 à 2025-2026, et cinq formations fictives de licence/master. Une seule inscription principale est admise par personne et année. La clôture d’observation est fixée au 30 septembre 2026.\n\n\n\n\n\n\n\n\nTable\nUnité d’observation\nContenu\n\n\n\n\netudiants\npersonne fictive\nprofil, année de naissance, bac, bourse, entrée observée\n\n\nformations\nformation fictive\ncycle, composante et niveau terminal\n\n\ninscriptions\ninscription principale annuelle\nétudiant, formation, niveau, régime\n\n\nresultats\nbilan annuel d’inscription\nvalidation oui/non/inconnue, ECTS, jury\n\n\nparcours\ntransition depuis une inscription\npassage, redoublement, réorientation, fin diplômée, sortie, inconnu, censure\n\n\nevaluation\nsollicitation d’une inscription\ndélivrance, réponse, avis et items partiels\n\n\ndiplomes\ndiplôme obtenu\ninscription terminale, type et date\n\n\ninsertion\nsuivi d’un diplôme à six mois\néligibilité, invitation, réponse et situation\n\n\n\nL’étudiant, l’inscription et le diplôme sont des unités distinctes. La cohorte d’entrée observée dans la fenêtre ne se confond pas avec une cohorte nationale de primo-entrants dans l’enseignement supérieur. La première année inclut un stock d’étudiants déjà avancés dans leur cycle.\nLa simulation intègre des différences artificielles entre formations, des profils incomplets, des résultats inconnus et des réponses partielles. Les trajectoires sont d’abord rendues cohérentes ; les anomalies techniques sont introduites ensuite dans une copie dédiée au contrôle qualité. Les paramètres et la graine sont documentés dans les sources téléchargeables.\n\n\n4 Qualité et traçabilité\nLa chaîne conserve trois états distincts : référence synthétique cohérente, copie brute avec anomalies contrôlées, puis tables préparées. Les douze injections incluent huit doublons exacts, un profil contradictoire, des ECTS hors domaine, une référence orpheline et une note hors échelle. Elles ont toutes été repérées par la recette.\nLe nettoyage ne lit pas le registre des valeurs de référence pour « deviner » les corrections. Les lignes strictement identiques sont dédupliquées ; les conflits et leurs dépendances sont placés en quarantaine. Les valeurs inconnues plausibles ne sont pas imputées arbitrairement.\n\n\n\n\n\n\nTable\nLignes brutes\nLignes préparées\n\n\n\n\netudiants\netudiants\n15002\n14999\n\n\nformations\nformations\n6\n5\n\n\ninscriptions\ninscriptions\n24221\n24217\n\n\nresultats\nresultats\n24222\n24217\n\n\nparcours\nparcours\n24221\n24217\n\n\nevaluation\nevaluation\n24221\n24216\n\n\ndiplomes\ndiplomes\n4774\n4772\n\n\ninsertion\ninsertion\n4774\n4772\n\n\n\n\n\nAprès préparation, 14998 personnes disposent d’au moins une inscription exploitable, pour 24217 inscriptions annuelles. Le référentiel étudiant peut conserver des personnes dont toutes les inscriptions ont été écartées ; ces unités ne doivent pas être confondues dans un total.\nLes contrôles couvrent unicité des clés, références, domaines, chronologie, cohérence ECTS/validation/diplôme et trajectoires. Le journal garde les clés, le contrôle et la décision. Zéro violation bloquante ne signifie pas que toutes les erreurs imaginables sont identifiables à partir des seules données.\n\n\n5 Méthodes et définitions\nChaque indicateur précise population, unité, numérateur, dénominateur, exclusions et période. Un dénominateur nul produit une valeur non calculable, pas zéro. Les taux agrégés sont recalculés à partir des comptes, jamais par moyenne simple de pourcentages.\n\n\n\n\n\n\n\n\nIndicateur\nNumérateur\nDénominateur / règle\n\n\n\n\nEffectif\nétudiants distincts avec inscription principale\nannée et formation définies\n\n\nÉvolution\neffectif courant moins précédent\neffectif précédent, années consécutives\n\n\nValidation annuelle\nvalidations connues oui\ntoutes les inscriptions éligibles\n\n\nPassage\nréinscription au niveau immédiatement supérieur, même formation\ncohorte suivable non terminale\n\n\nRéorientation\nréinscription dans une autre formation\ncohorte suivable complète\n\n\nParticipation\nrépondants à au moins un item substantiel\ninvitations effectivement délivrées\n\n\nSatisfaction\nnotes 4 ou 5 à l’item global\navis valides 1 à 5, hors sans avis et items vides\n\n\nEmploi à six mois\nrépondants éligibles en emploi\nrépondants éligibles de situation connue, études comprises\n\n\n\nLa validation annuelle ne désigne pas la diplomation terminale. Les résultats inconnus restent au dénominateur du taux sur éligibles sans être qualifiés individuellement d’échecs. Le taux parmi connus et la couverture sont donc présentés ensemble.\nPour la diffusion, les petits comptes positifs et compléments de 1 à 4 sont protégés. Le paquet de tableaux de bord applique une règle conservatrice : masquer toute une famille de comptes pour toutes les formations d’une année si une cellule est sensible. Aucun identifiant individuel ni compte masqué n’est transmis au navigateur. Ce seuil est une convention pédagogique, pas une norme institutionnelle.\n\n\n6 Enquêtes et devenir des diplômés\nLe protocole d’évaluation définit population invitée, participation volontaire, modalités 1–5, sans avis, réponses partielles et clôture. Les questionnaires fournis sont des matrices de transposition vers LimeSurvey, sans import natif testé ni envoi réel.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnnée\nSollicités\nRépondants\nAvis\nSatisfaits\nSans avis\nItems vides\nParticipation\nSatisfaction\n\n\n\n\n2023-2024\n5756\n2967\n2482\n1755\n132\n353\n51.5 %\n70.7 %\n\n\n2024-2025\n7704\n3936\n3269\n2312\n192\n475\n51.1 %\n70.7 %\n\n\n2025-2026\n9805\n4967\n4120\n2942\n255\n592\n50.7 %\n71.4 %\n\n\n\n\n\nLa satisfaction décrit les répondants ayant exprimé un avis valide. La non-réponse et les écarts de participation par profil peuvent entraîner des biais ; aucun redressement ou extrapolation implicite n’est appliqué. Les identifiants sont fictifs mais permettent une jointure par profil : le scénario lié ne doit pas être qualifié d’anonyme au sens d’une collecte réelle.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnnée diplôme\nDiplômes\nÉligibles\nNon matures\nSollicités\nRépondants\nConnus\nEmploi\nActifs\nEmploi / connus\nInsertion / actifs\n\n\n\n\n2023-2024\n1747\n1747\n0\n1648\n1011\n983\n576\n714\n58.6 %\n80.7 %\n\n\n2024-2025\n1437\n1437\n0\n1353\n844\n821\n500\n612\n60.9 %\n81.7 %\n\n\n2025-2026\n1588\n0\n1588\n0\n0\n0\n0\n0\nNon observable\nNon observable\n\n\n\n\n\nLe suivi d’insertion utilise six mois calendaires après le diplôme. Les 1588 diplômés non encore matures ne sont ni des non-répondants ni des personnes sans emploi. Emploi parmi situations connues et insertion parmi actifs ont des dénominateurs différents. Les totaux annuels de cette étude ne constituent pas les détails par formation du paquet Power BI, où de petits comptes sont supprimés.\n\n\n7 Parcours et suivi longitudinal\nLes transitions sont construites après rapprochement des inscriptions de deux années consécutives. Le classement distingue autre formation, passage dans la même formation, redoublement, fin de formation diplômée, sortie explicitement documentée et situation inconnue. Les transitions de la dernière année sont censurées.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnnée départ\nSuivis\nPassages\nRedoubl.\nRéorient.\nSorties observées\nInconnus\nFins diplômées\nCensurés\n\n\n\n\n2023-2024\n5969\n2429\n988\n142\n272\n391\n1747\n0\n\n\n2024-2025\n8026\n4067\n1400\n193\n382\n547\n1437\n0\n\n\n2025-2026\n0\n0\n0\n0\n0\n0\n0\n10222\n\n\n\n\n\nUne absence de réinscription ne prouve pas un abandon définitif. Une sortie observée exige une information explicite et datée. Une fin de cycle diplômée ne prouve pas non plus la sortie de tout l’enseignement supérieur. Le passage exclut les niveaux terminaux, contrairement au dénominateur général de réorientation.\nLes cohortes de départ 2023-2024 et 2024-2025 sont suivables dans cette fenêtre. La cohorte 2025-2026 ne peut être observée en 2026-2027 à la clôture. Une comparaison longitudinale doit donc considérer simultanément la durée de suivi disponible, les niveaux et la composition des cohortes.\n\n\n8 Modélisation exploratoire\nLe modèle logistique retient la première inscription exploitable chronologique de chaque étudiant et un résultat connu. Le modèle principal utilise des profils bac/bourse complets. Les prédicteurs sont disponibles avant jury : formation, niveau, âge, bac, bourse et année. ECTS, diplôme, résultat du jury, transition future et identifiant sont exclus pour éviter les fuites de cible.\nUne seule observation par personne évite la dépendance des inscriptions répétées dans cet exercice initial. Le découpage reproductible 70/30 sépare les étudiants entre apprentissage et évaluation ; il ne mesure pas une prédiction temporelle sur une année future.\n\n\n\n\n\n\n\n\n\n\n\nindicateur\nvaleur\n\n\n\n\nn_premieres_inscriptions\nn_premieres_inscriptions\n14998\n\n\nn_inclus\nn_inclus\n13473\n\n\nn_exclus_resultat\nn_exclus_resultat\n388\n\n\nn_exclus_profil_parmi_resultats_connus\nn_exclus_profil_parmi_resultats_connus\n1137\n\n\nn_train\nn_train\n9431\n\n\nn_test\nn_test\n4042\n\n\netudiants_communs\netudiants_communs\n0\n\n\nconvergence\nconvergence\n1\n\n\nevenements_par_parametre\nevenements_par_parametre\n207\n\n\nprobabilite_min\nprobabilite_min\n0.479\n\n\nprobabilite_max\nprobabilite_max\n0.851\n\n\nvif_max\nvif_max\n2.073\n\n\nbrier\nbrier\n0.189\n\n\nauc\nauc\n0.607\n\n\ncalibration_intercept\ncalibration_intercept\n-0.031\n\n\ncalibration_pente\ncalibration_pente\n1.013\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterme\ncoefficient\nerreur_standard\nodds_ratio\nborne_basse\nborne_haute\n\n\n\n\n(Intercept)\n(Intercept)\n0.471\n0.333\n1.602\n0.834\n3.078\n\n\nformation_idF02\nformation_idF02\n0.427\n0.066\n1.533\n1.347\n1.745\n\n\nformation_idF03\nformation_idF03\n0.248\n0.066\n1.282\n1.127\n1.458\n\n\nformation_idF04\nformation_idF04\n0.690\n0.097\n1.993\n1.650\n2.409\n\n\nformation_idF05\nformation_idF05\n0.581\n0.098\n1.787\n1.476\n2.164\n\n\nniveau\nniveau\n0.217\n0.053\n1.242\n1.120\n1.378\n\n\nage\nage\n0.005\n0.018\n1.005\n0.971\n1.041\n\n\ntype_bacprofessionnel\ntype_bacprofessionnel\n-0.731\n0.086\n0.481\n0.407\n0.569\n\n\ntype_bactechnologique\ntype_bactechnologique\n-0.504\n0.056\n0.604\n0.542\n0.674\n\n\nboursier\nboursier\n-0.140\n0.049\n0.869\n0.789\n0.957\n\n\nannee2024-2025\nannee2024-2025\n0.016\n0.070\n1.016\n0.885\n1.166\n\n\nannee2025-2026\nannee2025-2026\n0.186\n0.071\n1.204\n1.048\n1.384\n\n\n\n\n\nL’AUC d’environ 0.607 indique une discrimination limitée. La convergence ne suffit donc pas à justifier un usage individuel. Les diagnostics contrôlent rang, erreurs standards, coefficients extrêmes, événements par paramètre, VIF, Brier et calibration. Les intervalles de Wald à 95 % reposent sur les hypothèses du modèle.\n\n\n\n\n\nbin\nn\nprediction\nobserve\n\n\n\n\n1\n404\n0.585\n0.574\n\n\n2\n404\n0.660\n0.619\n\n\n3\n404\n0.693\n0.673\n\n\n4\n404\n0.719\n0.728\n\n\n5\n405\n0.739\n0.783\n\n\n6\n404\n0.760\n0.790\n\n\n7\n404\n0.777\n0.767\n\n\n8\n404\n0.798\n0.795\n\n\n9\n404\n0.815\n0.824\n\n\n10\n405\n0.836\n0.795\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nformation_id\nniveau\nage\ntype_bac\nboursier\nannee\nprobabilite\n\n\n\n\n11222\nF05\n1\n21\ngeneral\n0\n2023-2024\n0.800\n\n\n7052\nF04\n1\n21\ngeneral\n0\n2023-2024\n0.817\n\n\n5504\nF02\n1\n21\ngeneral\n0\n2023-2024\n0.774\n\n\n3302\nF03\n1\n21\ngeneral\n0\n2023-2024\n0.741\n\n\n13888\nF01\n1\n21\ngeneral\n0\n2023-2024\n0.691\n\n\n\n\n\nLes probabilités standardisées fixent l’âge à 21 ans, le premier niveau, un bac général, l’absence de bourse et l’année initiale. Elles illustrent le modèle et ne représentent pas une moyenne réelle de formation. Une sensibilité traite les profils manquants comme catégories explicites ; elle ne constitue pas une imputation ni une preuve d’absence de biais.\n\n\n9 Résultats descriptifs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnnée\nInscrits\nValidés\nConnus\nInconnus\nDiplômes\nÉlig. diplôme\nValidation / tous\nCouverture\nValidation / connus\n\n\n\n\n2023-2024\n5969\n4338\n5823\n146\n1747\n2289\n72.7 %\n97.6 %\n74.5 %\n\n\n2024-2025\n8026\n5745\n7821\n205\n1437\n1858\n71.6 %\n97.4 %\n73.5 %\n\n\n2025-2026\n10222\n7478\n9934\n288\n1588\n2045\n73.2 %\n97.2 %\n75.3 %\n\n\n\n\n\nEn 2025-2026, 7478 validations sont connues parmi 10222 inscriptions éligibles. Avec 288 résultats inconnus, la validation sur l’ensemble des éligibles se situe entre 73.2 % et 76.0 %, selon les résultats hypothétiques des absents. Aucun de ces résultats n’est imputé individuellement.\n\n\n\n\n\n\n\n\n\nLa progression des effectifs résulte de l’accumulation des cohortes et des probabilités artificielles de maintien. Elle ne mesure pas l’attractivité d’une université. Les différences de validation combinent paramètres du simulateur et composition des populations ; aucune hiérarchie de qualité des formations n’en découle.\n\n\n10 Indicateurs décisionnels\n\n\n\n\n\n\n\n\nQuestion de pilotage\nIndicateur à lire\nInformation complémentaire indispensable\n\n\n\n\nCombien d’inscrits accueille-t-on ?\neffectifs distincts par année et formation\npérimètre et évolution comparable\n\n\nQuel niveau de validation observe-t-on ?\nvalidation sur éligibles\ncouverture, taux parmi connus et bornes\n\n\nQuels parcours sont suivis ?\npassage et réorientation\nterminales, inconnus et censure\n\n\nQue disent les répondants ?\nsatisfaction\nparticipation, sans avis et non-réponse\n\n\nQuel devenir après diplôme ?\nemploi et insertion parmi actifs\nhorizon, éligibilité et situations connues\n\n\n\nLe site donne accès à trois modalités de restitution. Le tableau de bord web fonctionne dans le navigateur à partir des agrégats protégés. Shiny propose les mêmes vues avec des réactifs R ; sa source est disponible et nécessite un serveur R local ou un hébergement adapté. Power BI fournit un projet natif PBIP de trois pages, avec filtres année/formation, quatre cartes et évolution de la validation.\nLe modèle Power BI, ses sept tables, six relations et 35 mesures ont été chargés dans Desktop. L’actualisation et 126 rapprochements R/DAX sont réussis. La validation du moteur ne se confond pas avec une inspection exhaustive du canvas natif. Aucun service Power BI, hébergement Shiny distant ou rafraîchissement distant n’est actif.\n\n\n11 Recommandations de pilotage\nLes recommandations suivantes illustrent une méthode de travail, sans prescrire d’action pour une formation réelle à partir de chiffres fictifs.\n\nSécuriser les définitions avant comparaison. Valider les populations, les fenêtres et les exclusions avec le commanditaire ; conserver un dictionnaire versionné.\nQualifier les situations inconnues. Organiser un suivi explicite plutôt qu’un recodage automatique d’absence de réinscription en abandon.\nAccompagner les taux de leur couverture. Présenter les comptes, les résultats manquants et les bornes de sensibilité pour éviter une lecture trompeuse de la réussite.\nExaminer la non-réponse. Comparer participation et profils avant d’utiliser la satisfaction comme élément d’arbitrage ; ne pas confondre sans avis et avis défavorable.\nIndustrialiser une production contrôlée. Séparer données sources, corrections, indicateurs et diffusion ; tester les filtres et les règles de masquage après actualisation.\n\n\n\n\n\n\n\n\n\nContribution illustrative à l’autoévaluation\nPreuve du démonstrateur\nPrécaution\n\n\n\n\nConnaissance des publics\nprofils, effectifs et évolutions\npérimètre à convenir\n\n\nSuivi des parcours\nvalidation, transitions et censure\ndevenir incomplet\n\n\nÉcoute des étudiants\nquestionnaire et analyse des avis\nnon-réponse et biais\n\n\nDevenir des diplômés\nhorizon de six mois documenté\nmaturité et situation connue\n\n\nFiabilité de la production\njournal, versions et tests\ncontrôles non exhaustifs\n\n\n\nCette matrice ne revendique aucune conformité à un référentiel HCERES ni validation institutionnelle.\n\n\n12 Limites et précautions\n\nSimulation intégrale. Les écarts et les associations proviennent d’un mécanisme artificiel ; ils n’étayent aucune conclusion sur l’UPEC.\nFenêtre courte. Trois années ne permettent pas de suivre tous les cycles jusqu’au diplôme ni les transitions de la dernière année.\nMécanismes simplifiés. Pas de pause suivie de retour après sortie, une seule inscription principale et absence de retour après diplôme dans ce scénario.\nManques et sélection. Profils incomplets, résultats inconnus et non-réponse peuvent modifier les populations analytiques ; aucune correction universelle n’est revendiquée.\nModèle exploratoire. AUC limitée, hypothèses de modélisation, absence de causalité et aucune utilisation pour une décision individuelle.\nDiffusion. Le seuil de masquage est une convention pédagogique. Une collecte réelle exige un cadrage, des droits d’accès et des règles de confidentialité adaptés.\nOutils et déploiements. L’import LimeSurvey n’est pas testé. Le projet Power BI est livré en PBIP ; aucun PBIX ou déploiement dans le service n’est annoncé. Shiny est une application locale à démarrer. Le site présente fidèlement ces modalités sans les faire passer pour des applications distantes actives.\n\n\n\n13 Reproductibilité et accès aux livrables\nR, renv, targets, testthat et Quarto organisent la chaîne. La graine, la fenêtre et les probabilités figurent dans la configuration. La même graine reproduit des objets identiques à versions R et dépendances constantes. La reprise sans changement et l’invalidation après modification/restauration de graine ont été vérifiées.\n# À la racine du projet après restauration de renv.lock\nrenv::restore()\nsource(\"scripts/run_pipeline.R\")\nsource(\"scripts/run_tests.R\")\n# Dans un terminal à la racine : quarto render\n# Application R : source(\"scripts/run_shiny.R\")\nLes sources Quarto produisent les chiffres depuis les sorties R, sans remplacement manuel par les valeurs de la maquette initiale. Le site est un instantané : une nouvelle production doit être rendue, contrôlée puis republiée. La CI est préparée localement mais n’a pas été exécutée sur GitHub pendant la réalisation.\nLes accès principaux sont réunis sur le site de présentation :\n\nTableau de bord web interactif.\nRapport final en PDF et source Quarto.\nNote de pilotage de deux pages et PDF.\nRapport d’enquêtes et présentation de dix minutes.\nProjet Power BI natif et agrégats protégés.\nApplication R Shiny et archive reproductible du projet.\n\nLes archives de présentation excluent identifiants individuels, données brutes, bibliothèques locales, caches, journaux contenant des chemins utilisateurs et secrets. Seuls les agrégats protégés sélectionnés sont diffusés. Ces liens sont prévus pour la version publiée ; les fichiers locaux restent organisés dans le dépôt du projet."
+  },
+  {
+    "objectID": "enquetes.html",
+    "href": "enquetes.html",
+    "title": "Évaluation et devenir des diplômés",
+    "section": "",
+    "text": "La réponse peut être partielle. La satisfaction exclut les sans avis et les items vides ; la participation repose sur toutes les invitations délivrées. Les notes décrivent les répondants, sans extrapolation automatique aux non-répondants.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nannee\nsollicites\nrepondants\navis\nsatisfaits\nsans_avis\nitems_manquants\nparticipation\nsatisfaction\n\n\n\n\n2023-2024\n5756\n2967\n2482\n1755\n132\n353\n0.515\n0.707\n\n\n2024-2025\n7704\n3936\n3269\n2312\n192\n475\n0.511\n0.707\n\n\n2025-2026\n9805\n4967\n4120\n2942\n255\n592\n0.507\n0.714"
+  },
+  {
+    "objectID": "enquetes.html#évaluation-des-formations",
+    "href": "enquetes.html#évaluation-des-formations",
+    "title": "Évaluation et devenir des diplômés",
+    "section": "",
+    "text": "La réponse peut être partielle. La satisfaction exclut les sans avis et les items vides ; la participation repose sur toutes les invitations délivrées. Les notes décrivent les répondants, sans extrapolation automatique aux non-répondants.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nannee\nsollicites\nrepondants\navis\nsatisfaits\nsans_avis\nitems_manquants\nparticipation\nsatisfaction\n\n\n\n\n2023-2024\n5756\n2967\n2482\n1755\n132\n353\n0.515\n0.707\n\n\n2024-2025\n7704\n3936\n3269\n2312\n192\n475\n0.511\n0.707\n\n\n2025-2026\n9805\n4967\n4120\n2942\n255\n592\n0.507\n0.714"
+  },
+  {
+    "objectID": "enquetes.html#non-réponse",
+    "href": "enquetes.html#non-réponse",
+    "title": "Évaluation et devenir des diplômés",
+    "section": "Non-réponse",
+    "text": "Non-réponse\n\n\n\n\n\ntype_bac\nsollicites\nrepondants\nparticipation\n\n\n\n\ngeneral\n16081\n8202\n0.510\n\n\nprofessionnel\n1546\n792\n0.512\n\n\ntechnologique\n4757\n2413\n0.507\n\n\nNA\n881\n463\n0.526\n\n\n\n\n\nLes différences de participation sont issues de probabilités artificielles. Les manques de profil restent visibles ; aucune pondération ni hypothèse de représentativité n’est appliquée."
+  },
+  {
+    "objectID": "enquetes.html#devenir-à-six-mois",
+    "href": "enquetes.html#devenir-à-six-mois",
+    "title": "Évaluation et devenir des diplômés",
+    "section": "Devenir à six mois",
+    "text": "Devenir à six mois\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nannee\ndiplomes\neligibles\nnon_matures\nsollicites\nrepondants\nsituations_connues\nemploi\nactifs\nemploi_situations_connues\ninsertion_actifs\n\n\n\n\n2023-2024\n1747\n1747\n0\n1648\n1011\n983\n576\n714\n0.586\n0.807\n\n\n2024-2025\n1437\n1437\n0\n1353\n844\n821\n500\n612\n0.609\n0.817\n\n\n2025-2026\n1588\n0\n1588\n0\n0\n0\n0\n0\nNA\nNA\n\n\n\n\n\nL’emploi est rapporté aux situations connues, études comprises. L’insertion parmi actifs est une autre mesure, limitée à emploi + recherche. Les diplômés dont les six mois ne sont pas atteints sont non matures, pas non-répondants. Questionnaire et protocole dans surveys/ ; la matrice LimeSurvey n’a pas été importée dans un serveur."
+  }
+]
